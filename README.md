@@ -2,7 +2,7 @@
 
 ## Poetry
 
-- install VSCode extension `https://vscode.dev/github/szymonkonopek/ANAIRO/blob/mainension`
+- install VSCode extension `https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml`
 
 1. `poetry install` to install dependencies
 2. `poetry shell` -> `poe start` or `poetry run poe start` to start flask server
