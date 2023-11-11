@@ -2,10 +2,11 @@ from datetime import date
 
 
 class Driver:
-    def __init__(self, name,surname) -> None:
+    def __init__(self, name, surname) -> None:
         self.name = name
         self.surname = surname
         self.hireDate = None
+    
 
     def setHireDate(self, year, month, day):
         try:
@@ -17,7 +18,8 @@ class Driver:
         except ValueError as e:
             print(f"An error has occured: {e}")
 
+    def setHourlyRate(self, rate):
+        if (self.hireDate != None):
+            self.hourlyRate = rate
 
 driver = Driver("Jan", "Kowalski")
-
-driver.setHireDate(2022,12,31)
