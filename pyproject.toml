@@ -1,23 +1,15 @@
 [tool.poetry]
 name = "anairo"
 version = "0.1.0"
-description = "This is the project for ANAIRO classes"
+description = ""
 authors = ["szymonkonopek <sk.gornik@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 flask = "^3.0.0"
-poethepoet = "^0.24.1"
-openai = "^0.28.1"
+openai = "^1.2.3"
 python-dotenv = "^1.0.0"
-
-[tool.poetry.scripts]
-start = "anairo.flaskr:"
-
-[tool.poe.tasks.start]
-cmd  = "poetry run flask --app ./flaskr/app run"
-help = "Build the project"
 
 
 [build-system]
