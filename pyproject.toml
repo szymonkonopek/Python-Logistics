@@ -6,7 +6,7 @@ authors = ["szymonkonopek <sk.gornik@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 flask = "^3.0.0"
 openai = "^1.2.3"
 python-dotenv = "^1.0.0"
