@@ -22,6 +22,10 @@ class Driver:
     def setHourlyBaseRate(self, rate):
         if (self.hireDate != None):
             self.hourlyBaseRate = rate
-            print("Horly rate has been set to: " + str(self.hourlyBaseRate) +" PLN.")
+            print("Hourly rate has been set to: " + str(self.hourlyBaseRate) +" EURO.")
         else:
             print("Firstly set hire date.")
+
+    def getYearsOfExperience(self):
+        yearsOfExperience = date.today().year - self.hireDate.year
+        return yearsOfExperience
