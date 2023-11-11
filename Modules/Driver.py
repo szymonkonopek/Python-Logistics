@@ -1,4 +1,4 @@
-import datetime
+from datetime import date
 
 
 class Driver:
@@ -9,10 +9,16 @@ class Driver:
     
 
     def setHireDate(self, year, month, day):
-        self.hireDate = datetime.datetime(year=year, month=month, day=day)
-        print("Hire date has been set: " + self.hireDate.strftime("%x"))
+        try:
+            if (year > date.today().year):
+                print("Hire date cannot be set in the future.")
+            else:
+                self.hireDate = date(year=year, month=month, day=day)
+                print(self.hireDate.strftime("%x"))
+        except ValueError as e:
+            print(f"An error has occured: {e}")
 
 
 driver = Driver("Jan", "Kowalski")
 
-driver.setHireDate(2022,7,12)
+driver.setHireDate(2022,12,31)
