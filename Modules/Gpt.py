@@ -8,6 +8,9 @@ client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 import json
 
 class Gpt:
+    def __init__(self):
+        self.yes = True
+
     @staticmethod
     def calcDistance(cityA, cityB):
         completion = client.chat.completions.create(model="gpt-3.5-turbo",
@@ -19,4 +22,4 @@ class Gpt:
         print(content["length"], 'KM')
 
 
-Gpt.calcDistance("Kraków", "Smyków")
+#Gpt.calcDistance("Kraków", "Smyków")
