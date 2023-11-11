@@ -19,7 +19,8 @@ class Gpt:
             {"role": "user", "content": f"A={cityA}, B={cityB}"}
         ])
         content = json.loads(completion.choices[0].message.content)
-        print(content["length"], 'KM')
+        #print(content["length"], 'KM')
+        return content["length"]
 
 
 #Gpt.calcDistance("Kraków", "Smyków")

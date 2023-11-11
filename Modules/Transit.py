@@ -9,22 +9,20 @@ class Transit:
         self.destB = destB
         self.priceList = priceList
 
-    def calculateDistance(self):
-        return Gpt.calcDistance(self.destA, self.destB)
+        
 
-    def calculateRequiredFuelAmmount(self):
-        return self.priceList.getattr()
+    def getDistance(self):
+        self.distance = Gpt.calcDistance(self.destA, self.destB)
+        return self.distance
 
-    def calculatePriceForTrip(self):
-        distance = self.calculateDistance()
-        print(distance)
-
-
+    def calculateFuelPrice(self):
+        fuelEconomy = getattr(self.truck, 'fuel_economy')
+        print(self.distance, fuelEconomy)
+        return (int) ((self.distance / 100.0) * fuelEconomy * self.priceList.getFuelPriceEuro())
     
-
-    
-
-    
-    
-
-    
+    def calculateDriverTime(self):
+        drivingTime = self.distance / getattr(self.payload, 'maxAllowedSpeed')
+        restTime = (int) (drivingTime / 8)
+        totalTime = drivingTime + restTime
+        return totalTime
+        
