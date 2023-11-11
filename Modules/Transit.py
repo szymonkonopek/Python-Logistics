@@ -8,6 +8,7 @@ class Transit:
         self.destA = destA
         self.destB = destB
         self.priceList = priceList
+        self.totalTime = None
 
         
 
@@ -17,12 +18,14 @@ class Transit:
 
     def calculateFuelPrice(self):
         fuelEconomy = getattr(self.truck, 'fuel_economy')
-        print(self.distance, fuelEconomy)
         return (int) ((self.distance / 100.0) * fuelEconomy * self.priceList.getFuelPriceEuro())
     
     def calculateDriverTime(self):
         drivingTime = self.distance / getattr(self.payload, 'maxAllowedSpeed')
         restTime = (int) (drivingTime / 8)
-        totalTime = drivingTime + restTime
-        return totalTime
-        
+        self.totalTime = drivingTime + restTime
+        return self.totalTime
+    
+    def calculateDriverSalary(self):
+        total = self.totalTime * getattr(self.driver, 'hourlyBaseRate') * (1 + ((self.driver.getYearsOfExperience())/5))
+        return total

@@ -6,20 +6,26 @@ class Driver:
         self.name = name
         self.surname = surname
         self.hireDate = None
+        self.hourlyBaseRate = None
     
 
     def setHireDate(self, year, month, day):
         try:
-            if (year > date.today().year):
+            if (date(year,month,day) > date.today()):
                 print("Hire date cannot be set in the future.")
             else:
                 self.hireDate = date(year=year, month=month, day=day)
-                print(self.hireDate.strftime("%x"))
+                print("Hire date has been set to: " + self.hireDate.strftime("%x") + ".")
         except ValueError as e:
             print(f"An error has occured: {e}")
 
-    def setHourlyRate(self, rate):
+    def setHourlyBaseRate(self, rate):
         if (self.hireDate != None):
-            self.hourlyRate = rate
+            self.hourlyBaseRate = rate
+            print("Hourly rate has been set to: " + str(self.hourlyBaseRate) +" EURO.")
+        else:
+            print("Firstly set hire date.")
 
-driver = Driver("Jan", "Kowalski")
+    def getYearsOfExperience(self):
+        yearsOfExperience = date.today().year - self.hireDate.year
+        return yearsOfExperience
