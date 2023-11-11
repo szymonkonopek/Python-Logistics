@@ -6,7 +6,6 @@ class Driver:
         self.name = name
         self.surname = surname
         self.hireDate = None
-    
 
     def setHireDate(self, year, month, day):
         try:
