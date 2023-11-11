@@ -19,4 +19,4 @@ class Gpt:
         print(length["length"], 'KM')
 
 
-Gpt.calcDistance("Warsaw", "Berlin")
+Gpt.calcDistance("Kraków", "Smyków")
