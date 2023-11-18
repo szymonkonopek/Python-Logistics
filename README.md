@@ -1,4 +1,4 @@
-# ANAIRO
+# Python-Logistics
 ![image](https://github.com/szymonkonopek/ANAIRO/assets/54420112/2e2d9c5d-ec05-4117-8563-342766eaf100)
 
 ### required dependencies:
