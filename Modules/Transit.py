@@ -17,7 +17,7 @@ class Transit:
         return self.distance
 
     def calculateFuelPrice(self):
-        fuelEconomy = getattr(self.truck, 'fuel_economy')
+        fuelEconomy = getattr(self.truck, 'fuelEconomy')
         return (int) ((self.distance / 100.0) * fuelEconomy * self.priceList.getFuelPriceEuro())
     
     def calculateDriverTime(self):
