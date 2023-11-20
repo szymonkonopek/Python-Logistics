@@ -24,7 +24,7 @@ priceList = PriceList()
 
 transit = Transit(driver, truck, payload, destA, destB, priceList)
 transit.getDistance()
+print(getattr(transit, 'distance'))
 print("fuel price:",transit.calculateFuelPrice())
 print("driver time:",transit.calculateDriverTime())
 print("driver salary: ",transit.calculateDriverSalary())
-
