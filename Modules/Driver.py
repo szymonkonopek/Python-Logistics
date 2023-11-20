@@ -1,5 +1,5 @@
 from datetime import date
-
+import uuid
 
 class Driver:
     def __init__(self, name, surname) -> None:
@@ -7,6 +7,7 @@ class Driver:
         self.surname = surname
         self.hireDate = None
         self.hourlyBaseRate = None
+        self.id = uuid.uuid1()
     
 
     def setHireDate(self, year, month, day):

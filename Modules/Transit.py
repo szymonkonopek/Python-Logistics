@@ -10,7 +10,6 @@ class Transit:
         self.priceList = priceList
         self.totalTime = None
 
-        
 
     def getDistance(self):
         self.distance = Gpt.calcDistance(self.destA, self.destB)
