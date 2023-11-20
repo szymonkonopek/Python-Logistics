@@ -31,6 +31,30 @@
             "capacity": 2000,
             "fuelEconomy": 14,
             "otherThings": "otherThings"
+        },
+        {
+            "id": "47dc1efb-87d2-11ee-97c5-dd7bf6055296",
+            "brand": "Scania",
+            "model": "Scania",
+            "capacity": 2000,
+            "fuelEconomy": 14,
+            "otherThings": "otherThings"
+        },
+        {
+            "id": "796db8b1-87d3-11ee-97c5-dd7bf6055296",
+            "brand": "Scania",
+            "model": "Scania",
+            "capacity": 2000,
+            "fuelEconomy": 14,
+            "otherThings": "otherThings"
+        },
+        {
+            "id": "efb1696d-87d4-11ee-97c5-dd7bf6055296",
+            "brand": "Scania",
+            "model": "Scania",
+            "capacity": 2000,
+            "fuelEconomy": 14,
+            "otherThings": "otherThings"
         }
     ]
 }

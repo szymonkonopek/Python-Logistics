@@ -1,0 +1,16 @@
+[
+    {
+        "id": "796db8b0-87d3-11ee-97c5-dd7bf6055296",
+        "name": "Walter",
+        "surname": "White",
+        "hireDate": "11/02/22",
+        "hourlyBaseRate": 8
+    },
+    {
+        "id": "efb1696c-87d4-11ee-97c5-dd7bf6055296",
+        "name": "Walter",
+        "surname": "White",
+        "hireDate": "11/02/22",
+        "hourlyBaseRate": 8
+    }
+]

@@ -5,11 +5,13 @@ from Modules.Destination import Destination
 from Modules.PriceList import PriceList
 from Modules.PayloadDangerous import PayloadDangerous
 from Modules.truckList import TruckList
+from Modules.DriversList import DriversList
 
-
+driversList = DriversList()
 driver = Driver("Walter", "White")
 driver.setHireDate(2022,11,2)
 driver.setHourlyBaseRate(8)
+driversList.addDriver(driver)
 truckList = TruckList()
 truck = Truck('Scania', 'Scania', 2000, 14, 'otherThings')
 truckList.addTruck(truck)
