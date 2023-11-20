@@ -1,7 +1,10 @@
 from abc import ABC, abstractmethod
+import uuid
 
 class AVehicle(ABC):
+
     def __init__(self, brand, model, capacity, fuelEconomy):
+        self.id = uuid.uuid1()
         self.brand = brand
         self.model = model
         self.capacity = capacity
