@@ -8,9 +8,20 @@ class TruckList:
             self.truckList = json.load(f)
 
     def addTruck(self, truck):
-        self.truckList.append(truck)
+        self.truckList["trucks"].append(self.truckToJson(truck))
+        print('trucklist', self.truckList)
         with open('truckList.json', 'w') as f:
-            json.dump(self.truckList, f)
+            json.dump(self.truckList, f, indent=4)
+
+    def truckToJson(self, truck):
+        return {
+            "id": str(truck.id),
+            "brand": truck.brand,
+            "model": truck.model,
+            "capacity": truck.capacity,
+            "fuelEconomy": truck.fuelEconomy,
+            "otherThings": truck.otherThings
+        }
 
     def deleteTruck(self, truck_id):
         self.truckList = [truck for truck in self.truckList if truck['id'] != truck_id]
@@ -24,7 +35,7 @@ class TruckList:
         return None
     
     def getTruckList(self):
-        return self.truckList
+        return self.truckList["trucks"]
     
     def updateTruck(self, truck_id, truck):
         for i in range(len(self.truckList)):
