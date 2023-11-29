@@ -12,5 +12,12 @@
         "surname": "White",
         "hireDate": "11/02/22",
         "hourlyBaseRate": 8
+    },
+    {
+        "id": "e3c140fb-8ec6-11ee-80e1-4cebbd1a8a06",
+        "name": "Walter",
+        "surname": "White",
+        "hireDate": "11/02/22",
+        "hourlyBaseRate": 8
     }
 ]
