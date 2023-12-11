@@ -1,1 +1,1 @@
-print(truck)
+from tkinter import ttk
