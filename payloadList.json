@@ -3,7 +3,7 @@
         "payloadType": "PayloadRegular",
         "payload": {
             "id": "9a402ad1-2d33-4c74-a4e4-a817a55d8833",
-            "name": "RegularPayload",
+            "name": "RegularPayload type 1",
             "type": "Regular",
             "maxAllowedSpeed": 100,
             "weight": 50
@@ -13,7 +13,7 @@
         "payloadType": "PayloadAnimal",
         "payload": {
             "id": "35ef0400-a28a-4653-8b41-f8c568fb9b2e",
-            "name": "AnimalPayload",
+            "name": "AnimalPayload type 2",
             "type": "Animal",
             "maxAllowedSpeed": 80,
             "specialNeeds": "Special needs"

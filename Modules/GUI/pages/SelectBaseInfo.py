@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import json
 
-class SelectDriverAndTruck():
+class SelectBaseInfo():
     def __init__(self, app):
         self.app = app
 
@@ -23,6 +23,14 @@ class SelectDriverAndTruck():
         driver_names = [f"{driver['name']} {driver['surname']}" for driver in self.app.driver_data]
         self.app.driver_dropdown = ttk.Combobox(self.app.root, values=driver_names, textvariable=self.app.selected_driver)
         self.app.driver_dropdown.pack(pady=10)
+
+        label_payload = ttk.Label(self.app.root, text="Select a Payload:")
+        label_payload.pack(pady=10)
+
+        self.app.selected_payload = tk.StringVar()
+        payload_names = [f"{payload['payload']['name']}" for payload in self.app.payload_data]
+        self.app.payload_dropdown = ttk.Combobox(self.app.root, values=payload_names, textvariable=self.app.selected_payload)
+        self.app.payload_dropdown.pack(pady=10)
 
         show_info_button = ttk.Button(self.app.root, text="Show Info", command=self.app.info.show)
         show_info_button.pack(pady=10)

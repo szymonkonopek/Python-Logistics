@@ -8,10 +8,12 @@ class Info():
     def show(self):
             selected_truck_model = self.app.selected_truck.get()
             selected_driver_name = self.app.selected_driver.get()
+            selected_payload = self.app.selected_payload.get()
 
             selected_truck = next((truck for truck in self.app.truck_data if truck['model'] == selected_truck_model), None)
             selected_driver = next((driver for driver in self.app.driver_data if f"{driver['name']} {driver['surname']}" == selected_driver_name), None)
-
+            selected_payload = next((payload for payload in self.app.payload_data if f"{payload['payload']['name']}" == selected_payload), None)
+            
             if selected_truck and selected_driver:
                 info_window = tkinter.Toplevel(self.app.root)
                 info_window.title("Information")
