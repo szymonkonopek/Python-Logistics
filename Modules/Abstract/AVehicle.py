@@ -4,7 +4,7 @@ import uuid
 class AVehicle(ABC):
 
     def __init__(self, brand, model, capacity, fuelEconomy):
-        self.id = uuid.uuid1()
+        self.id = uuid.uuid4()
         self.brand = brand
         self.model = model
         self.capacity = capacity
