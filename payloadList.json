@@ -1,0 +1,32 @@
+[
+    {
+        "payloadType": "PayloadRegular",
+        "payload": {
+            "id": "bbab46e8-9d04-11ee-a165-61ffc518725f",
+            "name": "RegularPayload",
+            "type": "Regular",
+            "maxAllowedSpeed": 100,
+            "weight": 50
+        }
+    },
+    {
+        "payloadType": "PayloadAnimal",
+        "payload": {
+            "id": "bbab46e9-9d04-11ee-a165-61ffc518725f",
+            "name": "AnimalPayload",
+            "type": "Animal",
+            "maxAllowedSpeed": 80,
+            "specialNeeds": "Special needs"
+        }
+    },
+    {
+        "payloadType": "PayloadDangerous",
+        "payload": {
+            "id": "bbab46ea-9d04-11ee-a165-61ffc518725f",
+            "name": "DangerousPayload",
+            "type": "Dangerous",
+            "maxAllowedSpeed": 120,
+            "levelOfDanger": "High"
+        }
+    }
+]
