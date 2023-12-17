@@ -4,7 +4,7 @@ from Modules.Truck import Truck
 from Modules.Destination import Destination
 from Modules.PriceList import PriceList
 from Modules.PayloadDangerous import PayloadDangerous
-from Modules.truckList import TruckList
+from Modules.TruckList import TruckList
 from Modules.DriversList import DriversList
 from Modules.GUI.TruckChooserApp import TruckChooserApp
 
