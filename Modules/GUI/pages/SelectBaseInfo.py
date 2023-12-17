@@ -28,7 +28,7 @@ class SelectBaseInfo():
         label_payload.pack(pady=10)
 
         self.app.selected_payload = tk.StringVar()
-        payload_names = [f"{payload['payload']['name']}" for payload in self.app.payload_data]
+        payload_names = [f"{payload['name']}" for payload in self.app.payload_data]
         self.app.payload_dropdown = ttk.Combobox(self.app.root, values=payload_names, textvariable=self.app.selected_payload)
         self.app.payload_dropdown.pack(pady=10)
 
