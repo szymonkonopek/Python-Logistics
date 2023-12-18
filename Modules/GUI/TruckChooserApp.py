@@ -1,21 +1,35 @@
 import json
+from datetime import date
+
 from Modules.GUI.pages.SelectBaseInfo import SelectBaseInfo
 from Modules.GUI.pages.SelectDestination import SelectDestination
 from Modules.GUI.pages.CalculationPage import CalculationPage
 from Modules.GUI.pages.Info import Info
+from Modules.Transit import Transit
+
+from Modules.Truck import Truck
+from Modules.Driver import Driver
+from Modules.PayloadDangerous import PayloadDangerous
+from Modules.PriceList import PriceList
+
 
 class TruckChooserApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Truck Chooser App")
 
-        self.selectedDriver = "Delete Me"
-        self.selectedTruck = "Delete me pls"
-        self.selectedPayload = "Delete me pls!"
+        # to są wartości które są wpisane na stałe, trzeba zrobić tak zeby sie dynamicznie zmienaly
+        self.selectedDriver = Driver("Walter", "White", 8, date(2000,1,1))
+        self.selectedTruck = Truck('Scania truck', 'Scania', 2000, 14, 'otherThings')
+        self.selectedPayload = PayloadDangerous('Dynamite', maxAllowedSpeed=80, levelOfDanger=90)
 
-        self.fromDestination = "Location to change"
-        self.toDestination = "Location to change 2"
+        self.fromDestination = "Krakow"
+        self.toDestination = "Mielno"
 
+        self.distance = ""
+        self.fuelPrice = ""
+        self.driverTime = ""
+        self.driverSalary = ""
 
         self.root.geometry("600x400")
 
@@ -29,6 +43,26 @@ class TruckChooserApp:
         self.info = Info(self)
         
         self.selectDriver.show()
+
+    def calculate(self):
+        transit = Transit(
+            self.selectedDriver,
+            self.selectedTruck, 
+            self.selectedPayload, 
+            self.fromDestination, 
+            self.toDestination, 
+            PriceList())
+        
+        transit.getDistance()
+
+        self.distance = getattr(transit, 'distance')
+        self.fuelPrice = transit.calculateFuelPrice()
+        self.driverTime = transit.calculateDriverTime()
+        self.driverSalary = transit.calculateDriverSalary()
+
+        self.calculationPage.show()
+        self.calculationPage.showCalculations()
+
 
     def load_truck_data(self):
         with open(r'truckList.json', 'r') as file:

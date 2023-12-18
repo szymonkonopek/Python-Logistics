@@ -2,13 +2,15 @@ from datetime import date
 import uuid
 
 class Driver:
-    def __init__(self, name, surname) -> None:
+    def __init__(self, name, surname, hourlyBaseRate, hireDate) -> None:
         self.name = name
         self.surname = surname
-        self.hireDate = None
-        self.hourlyBaseRate = None
+        self.hireDate = hireDate
+        self.hourlyBaseRate = hourlyBaseRate
         self.id = uuid.uuid1()
     
+    def getNameSurname(self):
+        return self.name + " " + self.surname
 
     def setHireDate(self, year, month, day):
         try:

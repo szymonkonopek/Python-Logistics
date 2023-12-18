@@ -8,3 +8,6 @@ class APayload(ABC):
         self.id = uuid.uuid4()
         self.name = name
         self.maxAllowedSpeed = maxAllowedSpeed
+
+    def getName(self):
+        return self.name
