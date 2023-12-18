@@ -9,6 +9,14 @@ class TruckChooserApp:
         self.root = root
         self.root.title("Truck Chooser App")
 
+        self.selectedDriver = "Delete Me"
+        self.selectedTruck = "Delete me pls"
+        self.selectedPayload = "Delete me pls!"
+
+        self.fromDestination = "Location to change"
+        self.toDestination = "Location to change 2"
+
+
         self.root.geometry("600x400")
 
         self.load_truck_data()

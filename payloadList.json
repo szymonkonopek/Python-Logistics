@@ -1,16 +1,23 @@
 [
-    {
-        "id": "c11f0693-8f1d-4e1f-be66-54785ff6ffa7",
-        "name": "Coal",
-        "type": "PayloadRegular",
-        "maxAllowedSpeed": 100,
-        "weight": 50
-    },
-    {
-        "id": "c5894506-0dfb-4b11-a6e2-cb8472742db2",
-        "name": "Oil",
-        "type": "PayloadDangerous",
-        "maxAllowedSpeed": 120,
-        "levelOfDanger": "High"
-    }
+  {
+    "id": "c11f0693-8f1d-4e1f-be66-54785ff6ffa7",
+    "name": "Coal",
+    "type": "PayloadRegular",
+    "maxAllowedSpeed": 100,
+    "weight": 50
+  },
+  {
+    "id": "c5894506-0dfb-4b11-a6e2-cb8472742db2",
+    "name": "Oil",
+    "type": "PayloadDangerous",
+    "maxAllowedSpeed": 120,
+    "levelOfDanger": "High"
+  },
+  {
+    "id": "c5894506-0dfb-1234-a6e2-cb8472742db2",
+    "name": "Amelia",
+    "type": "PayloadAnimal",
+    "maxAllowedSpeed": 120,
+    "levelOfDanger": "High"
+  }
 ]
