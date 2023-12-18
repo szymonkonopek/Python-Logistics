@@ -11,3 +11,6 @@ class APayload(ABC):
 
     def getName(self):
         return self.name
+    
+    def getMaxAllowedSpeed(self):
+        return self.maxAllowedSpeed

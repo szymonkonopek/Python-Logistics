@@ -20,8 +20,9 @@ class TruckChooserApp:
 
         # to są wartości które są wpisane na stałe, trzeba zrobić tak zeby sie dynamicznie zmienaly
         self.selectedDriver = Driver("Walter", "White", 8, date(2000,1,1))
-        self.selectedTruck = Truck('Scania truck', 'Scania', 2000, 14, 'otherThings')
         self.selectedPayload = PayloadDangerous('Dynamite', maxAllowedSpeed=80, levelOfDanger=90)
+
+        self.selectedTruck = Truck('Scania truck', 'Scania', 2000, 14, self.selectedPayload.getMaxAllowedSpeed)
 
         self.fromDestination = "Krakow"
         self.toDestination = "Mielno"
@@ -31,7 +32,7 @@ class TruckChooserApp:
         self.driverTime = ""
         self.driverSalary = ""
 
-        self.root.geometry("600x400")
+        self.root.geometry("600x600")
 
         self.load_truck_data()
         self.load_driver_data()
