@@ -38,3 +38,14 @@ class SelectBaseInfo():
         nextPage = ttk.Button(self.app.root, text="Next", command=self.app.selectDestination.show)
         nextPage.pack(pady=10)
 
+        add_driver_button = ttk.Button(self.app.root, text="Add Driver", command=self.app.add_driver)
+        add_truck_button = ttk.Button(self.app.root, text="Add Truck", command=self.app.add_truck)
+        add_payload_button = ttk.Button(self.app.root, text="Add Payload", command=self.app.add_payload)
+        
+        add_driver_button.pack(pady=10)
+        add_truck_button.pack(pady=10)
+        add_payload_button.pack(pady=10)
+        
+        
+        
+

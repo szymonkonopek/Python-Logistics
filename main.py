@@ -7,6 +7,7 @@ from Modules.PayloadDangerous import PayloadDangerous
 from Modules.TruckList import TruckList
 from Modules.DriversList import DriversList
 from Modules.GUI.TruckChooserApp import TruckChooserApp
+from Modules.GUI.pages.DriverManager import DriverManager
 
 import tkinter as tk
 from tkinter import ttk
@@ -37,3 +38,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = TruckChooserApp(root)
     root.mainloop()
+   # DriverManager.add_driver(id="1101", name="aa", surname= "bb", hireDate="1019", hourlyBaseRate= 5)
+    

@@ -1,11 +1,18 @@
 import json
 from datetime import date
+from tkinter import Button
 
 from Modules.GUI.pages.SelectBaseInfo import SelectBaseInfo
 from Modules.GUI.pages.SelectDestination import SelectDestination
 from Modules.GUI.pages.CalculationPage import CalculationPage
 from Modules.GUI.pages.Info import Info
 from Modules.Transit import Transit
+from Modules.GUI.pages.AddDriverWindow import AddDriverWindow
+from Modules.GUI.pages.AddPayloadWindow import AddPayloadWindow
+from Modules.GUI.pages.AddTruckWindow import AddTruckWindow
+
+
+
 
 from Modules.Truck import Truck
 from Modules.Driver import Driver
@@ -31,6 +38,13 @@ class TruckChooserApp:
         self.fuelPrice = ""
         self.driverTime = ""
         self.driverSalary = ""
+        
+        self.selectDriver = SelectBaseInfo(self)
+        self.selectDestination = SelectDestination(self)
+        self.calculationPage = CalculationPage(self)
+        self.info = Info(self)
+
+
 
         self.root.geometry("600x600")
 
@@ -38,12 +52,9 @@ class TruckChooserApp:
         self.load_driver_data()
         self.load_payload_data()
 
-        self.selectDriver = SelectBaseInfo(self)
-        self.selectDestination = SelectDestination(self)
-        self.calculationPage = CalculationPage(self)
-        self.info = Info(self)
-        
+
         self.selectDriver.show()
+
 
     def calculate(self):
         transit = Transit(
@@ -80,5 +91,24 @@ class TruckChooserApp:
     def destroy_previous_widgets(self):
         for widget in self.root.winfo_children():
             widget.destroy()
+            
+        
+    def add_driver(self):
+        add_driver_window = AddDriverWindow(self.root, self.confirm_add_driver)
+
+    def add_truck(self):
+        add_truck_window = AddTruckWindow(self.root, self.confirm_add_truck)
+
+    def add_payload(self):
+        add_payload_window = AddPayloadWindow(self.root, self.confirm_add_payload)
+
+    def confirm_add_driver(self, name, surname):
+        print(f"Adding new driver: {name} {surname}")
+
+    def confirm_add_truck(self, brand, model):
+        print(f"Adding new truck: {brand} {model}")
+
+    def confirm_add_payload(self, name, payload_type):
+        print(f"Adding new payload: {name} {payload_type}")
 
    
