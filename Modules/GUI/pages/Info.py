@@ -23,7 +23,7 @@ class Info():
                                                         f"Model: {selected_truck['model']}\n"
                                                         f"Capacity: {selected_truck['capacity']}\n"
                                                         f"Fuel Economy: {selected_truck['fuelEconomy']}\n"
-                                                        f"Other Things: {selected_truck['otherThings']}\n\n"
+                                                        #f"Other Things: {selected_truck['otherThings']}\n\n"
                                                         f"Driver Information:\n"
                                                         f"Name: {selected_driver['name']}\n"
                                                         f"Surname: {selected_driver['surname']}\n"

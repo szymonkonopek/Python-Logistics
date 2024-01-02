@@ -1,4 +1,6 @@
 from tkinter import Toplevel, Label, Entry, Button
+import uuid
+from Modules.GUI.pages.TruckManager import TruckManager
 
 class AddTruckWindow:
     def __init__(self, parent, confirm_callback):
@@ -19,7 +21,6 @@ class AddTruckWindow:
         self.add_truck_window.geometry(f"{window_width}x{window_height}+{x_coordinate}+{y_coordinate}")
 
 
-        # Example: Add Entry widgets for entering truck information
         Label(self.add_truck_window, text="Brand:").pack()
         self.brand_entry = Entry(self.add_truck_window)
         self.brand_entry.pack()
@@ -27,19 +28,29 @@ class AddTruckWindow:
         Label(self.add_truck_window, text="Model:").pack()
         self.model_entry = Entry(self.add_truck_window)
         self.model_entry.pack()
+        
+        Label(self.add_truck_window, text="Capacity:").pack()
+        self.capacity_entry = Entry(self.add_truck_window)
+        self.capacity_entry.pack()
 
-        # Example: Add a button to confirm and add the new truck
+        Label(self.add_truck_window, text="Fuel Economy:").pack()
+        self.fuelEconomy_entry = Entry(self.add_truck_window)
+        self.fuelEconomy_entry.pack()        
+        #brand, model, Capacity, fuelEconomy
+
         confirm_button = Button(self.add_truck_window, text="Add Truck", command=self.confirm_add_truck)
         confirm_button.pack()
 
     def confirm_add_truck(self):
-        # Get the entered information
         brand = self.brand_entry.get()
         model = self.model_entry.get()
+        capacity = self.capacity_entry.get()
+        fuelEconomy = self.fuelEconomy_entry.get()
 
-        # Call the confirm callback with the entered information
         if callable(self.confirm_callback):
             self.confirm_callback(brand, model)
+            truckId = str(uuid.uuid1())
+            TruckManager.add_truck(truckId, brand, model, capacity, fuelEconomy)
+            
 
-        # Close the add truck window
         self.add_truck_window.destroy()
