@@ -1,50 +1,37 @@
 [
     {
-        "id": "c11f0693-8f1d-4e1f-be66-54785ff6ffa7",
-        "name": "Coal",
+        "id": "7ae4b3f6-f2f7-49a2-ac4d-30698cd135e8",
+        "name": "Rekin",
+        "type": "PayloadAnimal",
+        "maxAllowedSpeed": 50,
+        "specialNeeds": true
+    },
+    {
+        "id": "d24ce458-f48d-4ed9-9a30-eb21405dda6d",
+        "name": "Cow",
+        "type": "PayloadAnimal",
+        "maxAllowedSpeed": 30,
+        "specialNeeds": true
+    },
+    {
+        "id": "ca723913-0cf1-45fc-9dfe-b8934c38f149",
+        "name": "Fruits",
         "type": "PayloadRegular",
-        "maxAllowedSpeed": 100,
-        "weight": 50
-    },
-    {
-        "id": "c5894506-0dfb-4b11-a6e2-cb8472742db2",
-        "name": "Oil",
-        "type": "PayloadDangerous",
         "maxAllowedSpeed": 120,
-        "levelOfDanger": "High"
+        "weight": 4000
     },
     {
-        "id": "c5894506-0dfb-1234-a6e2-cb8472742db2",
-        "name": "Amelia",
-        "type": "PayloadAnimal",
-        "maxAllowedSpeed": 120,
-        "levelOfDanger": "High"
-    },
-    {
-        "id": "a4ff1111-a9b8-11ee-8ccc-4cebbd1a8a06",
-        "name": "a",
-        "type": "a",
-        "maxAllowedSpeed": "12"
-    },
-    {
-        "id": "790b0e31-04de-491a-a348-81232877fb15",
-        "name": "aaa",
-        "type": "PayloadAnimal",
-        "maxAllowedSpeed": "PayloadAnimal",
-        "specialNeeds": 100
-    },
-    {
-        "id": "8f726db7-6e3b-4f0d-89c2-011cf44f360d",
-        "name": "dange",
+        "id": "13a2469d-2ad6-4dda-b87f-97b7081ce904",
+        "name": "Dynamite",
         "type": "PayloadDangerous",
-        "maxAllowedSpeed": 100,
-        "levelOfDanger": "109"
+        "maxAllowedSpeed": 60,
+        "levelOfDanger": 1
     },
     {
-        "id": "a694b841-fbe3-4695-b2d8-0a7e7c93eeb3",
-        "name": "aaa",
+        "id": "48c4739e-ea94-4d6f-a165-f57259487f79",
+        "name": "Foczki",
         "type": "PayloadAnimal",
-        "maxAllowedSpeed": 100,
-        "specialNeeds": 200
+        "maxAllowedSpeed": 80,
+        "specialNeeds": true
     }
 ]
