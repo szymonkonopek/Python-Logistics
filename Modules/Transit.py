@@ -1,5 +1,5 @@
 from Modules.Gpt import Gpt
-
+from Modules.PriceList import PriceList
 
 # Class for calculating all of the Transit dependecies like Fuel Price, Driver's Time, Driver's experience
 class Transit:
