@@ -31,8 +31,8 @@ class TruckChooserApp:
 
         self.selectedTruck = Truck('Scania truck', 'Scania', 2000, 14, self.selectedPayload.getMaxAllowedSpeed)
 
-        self.fromDestination = "Krakow"
-        self.toDestination = "Mielno"
+        self.fromDestination = ""
+        self.toDestination = ""
 
         self.distance = ""
         self.fuelPrice = ""
