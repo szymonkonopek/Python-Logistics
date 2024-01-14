@@ -1,7 +1,7 @@
 import json
-from PayloadAnimal import PayloadAnimal
-from PayloadRegular import PayloadRegular
-from PayloadDangerous import PayloadDangerous
+from Modules.PayloadAnimal import PayloadAnimal
+from Modules.PayloadRegular import PayloadRegular
+from Modules.PayloadDangerous import PayloadDangerous
 
 class PayloadList:
     def __init__(self):

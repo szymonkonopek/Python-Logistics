@@ -1,4 +1,4 @@
-from Abstract.APayload import APayload
+from Modules.Abstract.APayload import APayload
 
 class PayloadAnimal(APayload):
     def __init__(self, name, maxAllowedSpeed, specialNeeds):

@@ -25,5 +25,26 @@
         "name": "a",
         "type": "a",
         "maxAllowedSpeed": "12"
+    },
+    {
+        "id": "790b0e31-04de-491a-a348-81232877fb15",
+        "name": "aaa",
+        "type": "PayloadAnimal",
+        "maxAllowedSpeed": "PayloadAnimal",
+        "specialNeeds": 100
+    },
+    {
+        "id": "8f726db7-6e3b-4f0d-89c2-011cf44f360d",
+        "name": "dange",
+        "type": "PayloadDangerous",
+        "maxAllowedSpeed": 100,
+        "levelOfDanger": "109"
+    },
+    {
+        "id": "a694b841-fbe3-4695-b2d8-0a7e7c93eeb3",
+        "name": "aaa",
+        "type": "PayloadAnimal",
+        "maxAllowedSpeed": 100,
+        "specialNeeds": 200
     }
 ]
