@@ -37,5 +37,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = TruckChooserApp(root)
     root.mainloop()
-   # DriverManager.add_driver(id="1101", name="aa", surname= "bb", hireDate="1019", hourlyBaseRate= 5)
     

@@ -1,6 +1,5 @@
 from tkinter import Toplevel, Label, Entry, Button, StringVar, ttk
 import uuid
-from Modules.GUI.pages.PayloadManager import PayloadManager
 from Modules.PayloadRegular import PayloadRegular
 from Modules.PayloadList import PayloadList
 from Modules.PayloadAnimal import PayloadAnimal
