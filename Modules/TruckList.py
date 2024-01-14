@@ -20,7 +20,7 @@ class TruckList:
             "model": truck.model,
             "capacity": truck.capacity,
             "fuelEconomy": truck.fuelEconomy,
-            "otherThings": truck.otherThings
+            "maxAllowedSpeed": truck.maxAllowedSpeed,
         }
     
     def jsonToTruck(self, truckJson):

@@ -1,6 +1,6 @@
 from tkinter import Toplevel, Label, Entry, Button
-import uuid
-from Modules.GUI.pages.TruckManager import TruckManager
+from Modules.Truck import Truck
+from Modules.TruckList import TruckList
 
 class AddTruckWindow:
     def __init__(self, parent, confirm_callback):
@@ -12,7 +12,7 @@ class AddTruckWindow:
         
                 # Set the dimensions of the window
         window_width = 400
-        window_height = 200
+        window_height = 300
         screen_width = parent.winfo_screenwidth()
         screen_height = parent.winfo_screenheight()
         x_coordinate = (screen_width - window_width) // 2
@@ -36,6 +36,11 @@ class AddTruckWindow:
         Label(self.add_truck_window, text="Fuel Economy:").pack()
         self.fuelEconomy_entry = Entry(self.add_truck_window)
         self.fuelEconomy_entry.pack()        
+
+        Label(self.add_truck_window, text="Max allowed Speed:").pack()
+        self.maxallowedspeed_entry = Entry(self.add_truck_window)
+        self.maxallowedspeed_entry.pack()        
+
         #brand, model, Capacity, fuelEconomy
 
         confirm_button = Button(self.add_truck_window, text="Add Truck", command=self.confirm_add_truck)
@@ -46,11 +51,13 @@ class AddTruckWindow:
         model = self.model_entry.get()
         capacity = self.capacity_entry.get()
         fuelEconomy = self.fuelEconomy_entry.get()
+        maxallowedspeed = self.maxallowedspeed_entry.get()
 
         if callable(self.confirm_callback):
             self.confirm_callback(brand, model)
-            truckId = str(uuid.uuid1())
-            TruckManager.add_truck(truckId, brand, model, capacity, fuelEconomy)
+            newTruck = Truck(brand, model, int(capacity), int(fuelEconomy), int(maxallowedspeed))
+            truckList = TruckList()
+            truckList.addTruck(newTruck)
             
 
         self.add_truck_window.destroy()

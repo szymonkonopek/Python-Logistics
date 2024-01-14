@@ -24,7 +24,15 @@ class Transit:
         restTime = (int) (drivingTime / 8)
         self.totalTime = drivingTime + restTime
         return self.totalTime
+
+    def getPayloadMultiplier(self):
+        if self.payload.type == 'PayloadDangerous':
+            return 1.5
+        elif self.payload.type == 'PayloadAnimal':
+            return 1.2
+        else:
+            return 1
     
     def calculateDriverSalary(self):
-        total = self.totalTime * getattr(self.driver, 'hourlyBaseRate') * (1 + ((self.driver.getYearsOfExperience())/5))
+        total = (self.totalTime * getattr(self.driver, 'hourlyBaseRate') * (1 + ((self.driver.getYearsOfExperience())/5))) * self.getPayloadMultiplier()
         return total
