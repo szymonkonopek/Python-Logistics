@@ -3,49 +3,28 @@
         "id": "796db8b0-87d3-11ee-97c5-dd7bf6055296",
         "name": "Walter",
         "surname": "White",
-        "hireDate": "11/02/22",
+        "hireDate": "11/02/2022",
         "hourlyBaseRate": 8
     },
     {
         "id": "efb1696c-87d4-11ee-97c5-dd7bf6055296",
         "name": "Walter",
         "surname": "White",
-        "hireDate": "11/02/22",
+        "hireDate": "11/02/2022",
         "hourlyBaseRate": 8
     },
     {
         "id": "e3c140fb-8ec6-11ee-80e1-4cebbd1a8a06",
         "name": "Walter",
         "surname": "White",
-        "hireDate": "11/02/22",
+        "hireDate": "11/02/2022",
         "hourlyBaseRate": 8
     },
     {
-        "id": "1101",
-        "name": "aa",
-        "surname": "bb",
-        "hireDate": "1019",
-        "hourlyBaseRate": 5
-    },
-    {
-        "id": "9e5992ec-a9b5-11ee-836f-4cebbd1a8a06",
-        "name": "wi",
-        "surname": "k",
-        "hireDate": "12",
-        "hourlyBaseRate": "1"
-    },
-    {
-        "id": "b8d3a70d-a9b5-11ee-8719-4cebbd1a8a06",
-        "name": "aa",
-        "surname": "ss",
-        "hireDate": "12",
-        "hourlyBaseRate": "12"
-    },
-    {
-        "id": "f5535b76-afe5-11ee-be73-a6cc5aae454f",
-        "name": "abc",
-        "surname": "def",
-        "hireDate": "10-12-2023",
-        "hourlyBaseRate": "10"
+        "id": "133bff6c-b2d4-11ee-876b-ddbb349e5847",
+        "name": "Amelia",
+        "surname": "Lis",
+        "hireDate": "01/02/2024",
+        "hourlyBaseRate": 8
     }
 ]

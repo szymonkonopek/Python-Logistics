@@ -1,7 +1,10 @@
-from tkinter import Toplevel, Label, Entry, Button
+from datetime import datetime
+from tkinter import *
+from tkcalendar import DateEntry
 import uuid
 import string
-from Modules.GUI.pages.DriverManager import DriverManager
+from Modules.Driver import Driver
+from Modules.DriversList import DriversList
 
 class AddDriverWindow:
     def __init__(self, parent, confirm_callback):
@@ -20,7 +23,6 @@ class AddDriverWindow:
 
         self.add_driver_window.geometry(f"{window_width}x{window_height}+{x_coordinate}+{y_coordinate}")
 
-
         Label(self.add_driver_window, text="Name:").pack()
         self.name_entry = Entry(self.add_driver_window)
         self.name_entry.pack()
@@ -30,8 +32,9 @@ class AddDriverWindow:
         self.surname_entry.pack()
         
         #hire date
-        Label(self.add_driver_window, text="hire date:").pack()
+        Label(self.add_driver_window, text="Hire date:").pack()
         self.hireDate_entry = Entry(self.add_driver_window)
+        self.hireDate_entry = DateEntry(self.add_driver_window, date_pattern='yyyy-mm-dd')
         self.hireDate_entry.pack()
         
         #hourly base rate
@@ -45,12 +48,15 @@ class AddDriverWindow:
     def confirm_add_driver(self):
         name = self.name_entry.get()
         surname = self.surname_entry.get()
-        hireDate = self.hireDate_entry.get()
+        hireDate_str = self.hireDate_entry.get()
+        hireDate_obj = datetime.strptime(hireDate_str, '%Y-%m-%d').date()
+        formatted_hireDate = hireDate_obj.strftime('%m/%d/%Y')
         hourlyBase = self.hourlyBase_entry.get()
         
         if callable(self.confirm_callback):
-            self.confirm_callback(name, surname, hireDate, hourlyBase)
-            driverId = str(uuid.uuid1())
-            DriverManager.add_driver(driverId ,name, surname, hireDate, hourlyBase)
+            self.confirm_callback(name, surname, formatted_hireDate, hourlyBase)
+            new_driver = Driver(name, surname, formatted_hireDate, int(hourlyBase))
+            drivers_list = DriversList()
+            drivers_list.addDriver(new_driver)
 
         self.add_driver_window.destroy()

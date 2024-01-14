@@ -1,8 +1,8 @@
-from datetime import date
+from datetime import date, datetime
 import uuid
 
 class Driver:
-    def __init__(self, name, surname, hourlyBaseRate, hireDate) -> None:
+    def __init__(self, name, surname, hireDate, hourlyBaseRate) -> None:
         self.name = name
         self.surname = surname
         self.hireDate = hireDate
@@ -30,5 +30,9 @@ class Driver:
             print("Firstly set hire date.")
 
     def getYearsOfExperience(self):
-        yearsOfExperience = date.today().year - self.hireDate.year
+        # a_date = datetime.strptime(self.hireDate, '%m/%d/%y') # Use capital Y for year with century
+        # b_date = datetime.strptime(datetime.now(), '%m/%d/%y')
+        # yearsOfExperience = b_date - a_date
+        hireDate_obj = datetime.strptime(self.hireDate,'%m/%d/%Y')
+        yearsOfExperience = int(datetime.now().year - hireDate_obj.year)
         return yearsOfExperience
