@@ -5,6 +5,7 @@ from Modules.PayloadList import PayloadList
 from Modules.PayloadAnimal import PayloadAnimal
 from Modules.PayloadDangerous import PayloadDangerous
 
+# Pop up to add new payload
 class AddPayloadWindow:
     def __init__(self,app, confirm_callback, type):
         self.app = app

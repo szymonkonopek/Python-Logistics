@@ -3,16 +3,20 @@ from Modules.PayloadAnimal import PayloadAnimal
 from Modules.PayloadRegular import PayloadRegular
 from Modules.PayloadDangerous import PayloadDangerous
 
+# Class which constructs and operates functions on payloadList.json file 
 class PayloadList:
     def __init__(self):
         with open('payloadList.json', 'r') as f:
             self.payloadList = json.load(f)
 
+# Add Payload object to the payloadList.json
     def addPayload(self, payload):
         self.payloadList.append(self.payloadToJson(payload))
         with open('payloadList.json', 'w') as f:
             json.dump(self.payloadList, f, indent=4)
 
+
+# Transforms Payload class object attributes to json dictionary format (depending on the type)
     def payloadToJson(self, payload):
         if isinstance(payload, PayloadRegular):
             return {
@@ -39,6 +43,7 @@ class PayloadList:
                 "levelOfDanger": payload.levelOfDanger
             }
     
+# Transforms json dictionary object to Payload class object
     def jsonToPayload(self, json_data):
         payload_type = json_data.get("type", None)
         if payload_type == "PayloadRegular":
@@ -68,33 +73,21 @@ class PayloadList:
         else:
             raise ValueError(f"Unsupported payload type: {payload_type}")
 
+# Deletes Payload with given id from payloadLis.json
     def deletePayload(self, payload_id):
         self.payloadList = [payload for payload in self.payloadList if payload['id'] != payload_id]
         with open('payloadList.json', 'w') as f:
             json.dump(self.payloadList, f, indent=4)
 
+# Function which returns a Payload object from given id
     def getPayload(self, payload_id):
         for payload in self.payloadList:
             if payload['id'] == payload_id:
                 return payload
         return None
     
+# Function which retrun whole list of payload
     def getPayloadList(self):
         for i in range(len(self.payloadList)):
             self.payloadList[i] = self.jsonToPayload(self.payloadList[i])
         return self.payloadList
-
-#Przykłady użycia:
-# payloadList = PayloadList()
-
-# # Dodawanie obiektów różnych klas do listy
-# payload_regular = PayloadRegular("Coal", 100, 50)
-# payloadList.addPayload(payload_regular)
-
-# payload_animal = PayloadAnimal("Zebras", 80, "Special needs")
-# payloadList.addPayload(payload_animal)
-
-# payload_dangerous = PayloadDangerous("Oil", 120, "High")
-# payloadList.addPayload(payload_dangerous)
-
-# payloadList.deletePayload("id")

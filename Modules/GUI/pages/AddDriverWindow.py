@@ -6,6 +6,7 @@ import string
 from Modules.Driver import Driver
 from Modules.DriversList import DriversList
 
+# Pop up to add new Driver
 class AddDriverWindow:
     def __init__(self, app, confirm_callback):
         self.app = app

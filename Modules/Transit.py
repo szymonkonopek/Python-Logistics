@@ -1,5 +1,6 @@
 from Modules.Gpt import Gpt
 
+
 # Class for calculating all of the Transit dependecies like Fuel Price, Driver's Time, Driver's experience
 class Transit:
     def __init__(self, driver, truck, payload, destA, destB, priceList):

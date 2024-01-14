@@ -2,10 +2,12 @@ import tkinter as tk
 from tkinter import ttk
 import json
 
+# GUI select Base information page, to select Driver, Truck and Payload
 class SelectBaseInfo():
     def __init__(self, app):
         self.app = app
 
+# Shows every label and form input
     def show(self):
         self.app.destroy_previous_widgets()
         label_truck = ttk.Label(self.app.root, text="Select a Truck:")
@@ -38,6 +40,7 @@ class SelectBaseInfo():
         nextPage = ttk.Button(self.app.root, text="Next", command=self.app.selectDestination.show)
         nextPage.pack(pady=10)
 
+# Button to add new Driver, Truck or Payload
         add_driver_button = ttk.Button(self.app.root, text="Add Driver", command=self.app.add_driver)
         add_truck_button = ttk.Button(self.app.root, text="Add Truck", command=self.app.add_truck)
         add_payload_button = ttk.Button(self.app.root, text="Add Payload", command=self.app.add_payload)

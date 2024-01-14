@@ -2,6 +2,7 @@ from tkinter import Toplevel, Label, Entry, Button
 from Modules.Truck import Truck
 from Modules.TruckList import TruckList
 
+# Pop up window to add new Truck
 class AddTruckWindow:
     def __init__(self, app, confirm_callback):
         self.app = app

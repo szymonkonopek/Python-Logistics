@@ -1,6 +1,6 @@
 from tkinter import ttk
 
-
+# GUI for Calculation page
 class CalculationPage:
     def __init__(self, app):
         self.app = app

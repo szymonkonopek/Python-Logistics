@@ -18,6 +18,7 @@ from Modules.Truck import Truck
 from Modules.Driver import Driver
 from Modules.PayloadDangerous import PayloadDangerous
 from Modules.PriceList import PriceList
+from Modules.Destination import Destination
 
 
 class TruckChooserApp:
@@ -31,8 +32,9 @@ class TruckChooserApp:
 
         self.selectedTruck = Truck('Scania truck', 'Scania', 2000, 14, self.selectedPayload.getMaxAllowedSpeed)
 
-        self.fromDestination = ""
-        self.toDestination = ""
+        # First set e
+        self.fromDestination = Destination()
+        self.toDestination = Destination()
 
         self.distance = ""
         self.fuelPrice = ""
@@ -61,8 +63,8 @@ class TruckChooserApp:
             self.selectedDriver,
             self.selectedTruck, 
             self.selectedPayload, 
-            self.fromDestination, 
-            self.toDestination, 
+            self.fromDestination.getName(), 
+            self.toDestination.getName(), 
             PriceList())
         
         transit.getDistance()

@@ -49,7 +49,7 @@ class TruckList:
             self.truckList[i] = self.jsonToTruck(self.truckList[i])
         return self.truckList
 
-# Updates a truck record in truckList.json
+# Updates a Truck record in truckList.json
     def updateTruck(self, truck_id, truck):
         for i in range(len(self.truckList)):
             if self.truckList[i]['id'] == truck_id:
