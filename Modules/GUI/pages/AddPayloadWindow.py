@@ -7,11 +7,9 @@ from Modules.PayloadDangerous import PayloadDangerous
 
 class AddPayloadWindow:
     def __init__(self,app, confirm_callback, type):
-        self.renderPayloadWindow(app.root, confirm_callback, type)
         self.app = app
 
-    def renderPayloadWindow(self,parent, confirm_callback, type):
-        self.parent = parent
+        parent = app.root
         self.confirm_callback = confirm_callback
 
         self.add_payload_window = Toplevel(parent)
@@ -66,7 +64,7 @@ class AddPayloadWindow:
         self.payloadtype_cb.bind('<<ComboboxSelected>>', self.typeChanged)
     def typeChanged(self, event):
         print(self.payloadtype_cb.get())
-        AddPayloadWindow(self.app, self.parent, self.confirm_callback, self.payloadtype_cb.get())
+        AddPayloadWindow(self.app, self.confirm_callback, self.payloadtype_cb.get())
         self.add_payload_window.destroy()
 
         

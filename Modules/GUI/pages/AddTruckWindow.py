@@ -5,10 +5,8 @@ from Modules.TruckList import TruckList
 class AddTruckWindow:
     def __init__(self, app, confirm_callback):
         self.app = app
-        self.renderTruckWindow(self.app.root, confirm_callback)
 
-    def renderTruckWindow(self, parent, confirm_callback):
-        self.parent = parent
+        parent = app.root
         self.confirm_callback = confirm_callback
 
         self.add_truck_window = Toplevel(parent)
