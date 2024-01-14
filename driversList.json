@@ -21,24 +21,10 @@
         "hourlyBaseRate": 8
     },
     {
-        "id": "1101",
-        "name": "aa",
-        "surname": "bb",
-        "hireDate": "1019",
-        "hourlyBaseRate": 5
-    },
-    {
-        "id": "9e5992ec-a9b5-11ee-836f-4cebbd1a8a06",
-        "name": "wi",
-        "surname": "k",
-        "hireDate": "12",
-        "hourlyBaseRate": "1"
-    },
-    {
-        "id": "b8d3a70d-a9b5-11ee-8719-4cebbd1a8a06",
-        "name": "aa",
-        "surname": "ss",
-        "hireDate": "12",
-        "hourlyBaseRate": "12"
+        "id": "133bff6c-b2d4-11ee-876b-ddbb349e5847",
+        "name": "Amelia",
+        "surname": "Lis",
+        "hireDate": "01/02/24",
+        "hourlyBaseRate": 8
     }
 ]

@@ -2,7 +2,7 @@ from datetime import date
 import uuid
 
 class Driver:
-    def __init__(self, name, surname, hourlyBaseRate, hireDate) -> None:
+    def __init__(self, name, surname, hireDate, hourlyBaseRate) -> None:
         self.name = name
         self.surname = surname
         self.hireDate = hireDate

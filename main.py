@@ -7,7 +7,6 @@ from Modules.PayloadDangerous import PayloadDangerous
 from Modules.TruckList import TruckList
 from Modules.DriversList import DriversList
 from Modules.GUI.TruckChooserApp import TruckChooserApp
-from Modules.GUI.pages.DriverManager import DriverManager
 
 import tkinter as tk
 from tkinter import ttk

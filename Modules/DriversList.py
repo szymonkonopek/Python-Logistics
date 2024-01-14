@@ -17,7 +17,7 @@ class DriversList():
             "id": str(driver.id),
             "name": driver.name,
             "surname": driver.surname,
-            "hireDate": driver.hireDate.strftime("%x"), 
+            "hireDate": driver.hireDate, 
             "hourlyBaseRate": driver.hourlyBaseRate
         }
 
