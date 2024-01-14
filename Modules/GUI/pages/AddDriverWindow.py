@@ -7,7 +7,11 @@ from Modules.Driver import Driver
 from Modules.DriversList import DriversList
 
 class AddDriverWindow:
-    def __init__(self, parent, confirm_callback):
+    def __init__(self, app, confirm_callback):
+        self.app = app
+        self.renderDriverWindow(self.app.root, confirm_callback)
+
+    def renderDriverWindow(self, parent, confirm_callback):
         self.parent = parent
         self.confirm_callback = confirm_callback
 
@@ -15,7 +19,7 @@ class AddDriverWindow:
         self.add_driver_window.title("Add Driver")
         
         window_width = 400
-        window_height = 200
+        window_height = 300
         screen_width = parent.winfo_screenwidth()
         screen_height = parent.winfo_screenheight()
         x_coordinate = (screen_width - window_width) // 2
@@ -60,3 +64,6 @@ class AddDriverWindow:
             drivers_list.addDriver(new_driver)
 
         self.add_driver_window.destroy()
+        self.app.destroy_previous_widgets()
+        self.app.load_driver_data()
+        self.app.selectDriver.show()

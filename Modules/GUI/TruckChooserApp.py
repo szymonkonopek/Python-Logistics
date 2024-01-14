@@ -94,13 +94,13 @@ class TruckChooserApp:
             
         
     def add_driver(self):
-        add_driver_window = AddDriverWindow(self.root, self.confirm_add_driver)
+        add_driver_window = AddDriverWindow(self, self.confirm_add_driver)
 
     def add_truck(self):
-        add_truck_window = AddTruckWindow(self.root, self.confirm_add_truck)
+        add_truck_window = AddTruckWindow(self, self.confirm_add_truck)
 
     def add_payload(self):
-        add_payload_window = AddPayloadWindow(self.root, self.confirm_add_payload, "PayloadRegular")
+        add_payload_window = AddPayloadWindow(self, self.confirm_add_payload, "PayloadRegular")
 
     def confirm_add_driver(self, name, surname, hireDate, hourlyBase ):
         print(f"Adding new driver: {name} {surname}")

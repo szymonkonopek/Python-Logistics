@@ -1,14 +1,14 @@
 from tkinter import Toplevel, Label, Entry, Button, StringVar, ttk
 import uuid
-from Modules.GUI.pages.PayloadManager import PayloadManager
 from Modules.PayloadRegular import PayloadRegular
 from Modules.PayloadList import PayloadList
 from Modules.PayloadAnimal import PayloadAnimal
 from Modules.PayloadDangerous import PayloadDangerous
 
 class AddPayloadWindow:
-    def __init__(self, parent, confirm_callback, type):
-        self.renderPayloadWindow(parent, confirm_callback, type)
+    def __init__(self,app, confirm_callback, type):
+        self.renderPayloadWindow(app, confirm_callback, type)
+        self.app = app
 
     def renderPayloadWindow(self,parent, confirm_callback, type):
         self.parent = parent
@@ -66,7 +66,7 @@ class AddPayloadWindow:
         self.payloadtype_cb.bind('<<ComboboxSelected>>', self.typeChanged)
     def typeChanged(self, event):
         print(self.payloadtype_cb.get())
-        AddPayloadWindow(self.parent, self.confirm_callback, self.payloadtype_cb.get())
+        AddPayloadWindow(self.app, self.parent, self.confirm_callback, self.payloadtype_cb.get())
         self.add_payload_window.destroy()
 
         
@@ -93,3 +93,7 @@ class AddPayloadWindow:
                 payloadList.addPayload(newPayload)
             
             self.add_payload_window.destroy()
+            self.app.destroy_previous_widgets()
+            self.app.load_payload_data()
+            self.app.selectDriver.show()
+

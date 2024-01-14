@@ -26,5 +26,12 @@
         "surname": "Lis",
         "hireDate": "01/02/2024",
         "hourlyBaseRate": 8
+    },
+    {
+        "id": "b5057534-b2fd-11ee-9595-a6cc5aae454f",
+        "name": "Szymito",
+        "surname": "Yesyes",
+        "hireDate": "01/14/2024",
+        "hourlyBaseRate": 123
     }
 ]

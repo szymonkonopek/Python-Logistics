@@ -3,7 +3,11 @@ from Modules.Truck import Truck
 from Modules.TruckList import TruckList
 
 class AddTruckWindow:
-    def __init__(self, parent, confirm_callback):
+    def __init__(self, app, confirm_callback):
+        self.app = app
+        self.renderTruckWindow(self.app.root, confirm_callback)
+
+    def renderTruckWindow(self, parent, confirm_callback):
         self.parent = parent
         self.confirm_callback = confirm_callback
 
@@ -59,5 +63,7 @@ class AddTruckWindow:
             truckList = TruckList()
             truckList.addTruck(newTruck)
             
-
-        self.add_truck_window.destroy()
+            self.add_truck_window.destroy()
+            self.app.destroy_previous_widgets()
+            self.app.load_truck_data()
+            self.app.selectDriver.show()

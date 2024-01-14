@@ -52,5 +52,21 @@
         "capacity": 10,
         "fuelEconomy": 10,
         "maxAllowedSpeed": 100
+    },
+    {
+        "id": "4cb44df5-95bd-4049-a8c4-bc5715996d02",
+        "brand": "tesla",
+        "model": "S",
+        "capacity": 100,
+        "fuelEconomy": 100,
+        "maxAllowedSpeed": 1200
+    },
+    {
+        "id": "6c4243ce-44fd-4b93-8615-a8f7c1458204",
+        "brand": "Mercedes",
+        "model": "AMG ",
+        "capacity": 111,
+        "fuelEconomy": 222,
+        "maxAllowedSpeed": 333
     }
 ]
