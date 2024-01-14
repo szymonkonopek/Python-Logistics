@@ -37,5 +37,20 @@
         "model": "e",
         "capacity": "t",
         "fuelEconomy": "14"
+    },
+    {
+        "id": "85b705ea-9290-4a70-a8e8-3a438ab74220",
+        "brand": "tewst",
+        "model": "tset",
+        "capacity": 10,
+        "fuelEconomy": 10
+    },
+    {
+        "id": "d69eceaa-aaec-4895-b724-cedb57971080",
+        "brand": "lol",
+        "model": "lol",
+        "capacity": 10,
+        "fuelEconomy": 10,
+        "maxAllowedSpeed": 100
     }
 ]
