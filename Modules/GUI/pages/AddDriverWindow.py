@@ -1,5 +1,6 @@
 from datetime import datetime
 from tkinter import *
+from tkinter import messagebox
 from tkcalendar import DateEntry
 import uuid
 import string
@@ -36,13 +37,13 @@ class AddDriverWindow:
         
         #hire date
         Label(self.add_driver_window, text="Hire date:").pack()
-        self.hireDate_entry = Entry(self.add_driver_window)
-        self.hireDate_entry = DateEntry(self.add_driver_window, date_pattern='yyyy-mm-dd')
+        self.hireDate_entry = DateEntry(self.add_driver_window, maxdate=datetime.now(), date_pattern='yyyy-mm-dd')
         self.hireDate_entry.pack()
         
         #hourly base rate
-        Label(self.add_driver_window, text="hourly base rate:").pack()
-        self.hourlyBase_entry = Entry(self.add_driver_window)
+        self.hourlyBaseRate_var = StringVar()
+        Label(self.add_driver_window, text="Hourly base rate:").pack()
+        self.hourlyBase_entry = Entry(self.add_driver_window, textvariable=self.hourlyBaseRate_var, validate="key", validatecommand=(self.add_driver_window.register(self.validate_input), "%P"))
         self.hourlyBase_entry.pack()
 
         confirm_button = Button(self.add_driver_window, text="Add Driver", command=self.confirm_add_driver)
@@ -66,3 +67,15 @@ class AddDriverWindow:
         self.app.destroy_previous_widgets()
         self.app.load_driver_data()
         self.app.selectDriver.show()
+
+
+    def validate_input(self, new_value):
+        try:
+            # Attempt to convert the input to an integer
+            if new_value:
+                int(new_value)
+            return True
+        except ValueError:
+            # If conversion fails, show an error message
+            messagebox.showerror("Error", "Please enter a valid integer.")
+            return False

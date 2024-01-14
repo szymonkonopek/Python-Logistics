@@ -1,19 +1,5 @@
 [
     {
-        "id": "796db8b0-87d3-11ee-97c5-dd7bf6055296",
-        "name": "Walter",
-        "surname": "White",
-        "hireDate": "11/02/2022",
-        "hourlyBaseRate": 8
-    },
-    {
-        "id": "efb1696c-87d4-11ee-97c5-dd7bf6055296",
-        "name": "Walter",
-        "surname": "White",
-        "hireDate": "11/02/2022",
-        "hourlyBaseRate": 8
-    },
-    {
         "id": "e3c140fb-8ec6-11ee-80e1-4cebbd1a8a06",
         "name": "Walter",
         "surname": "White",
@@ -33,5 +19,12 @@
         "surname": "Yesyes",
         "hireDate": "01/14/2024",
         "hourlyBaseRate": 123
+    },
+    {
+        "id": "fa6fcad4-b32a-11ee-876b-ddbb349e5847",
+        "name": "Jan",
+        "surname": "Kowalski",
+        "hireDate": "01/14/2024",
+        "hourlyBaseRate": 90
     }
 ]
