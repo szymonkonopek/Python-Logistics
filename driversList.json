@@ -3,28 +3,28 @@
         "id": "796db8b0-87d3-11ee-97c5-dd7bf6055296",
         "name": "Walter",
         "surname": "White",
-        "hireDate": "11/02/22",
+        "hireDate": "11/02/2022",
         "hourlyBaseRate": 8
     },
     {
         "id": "efb1696c-87d4-11ee-97c5-dd7bf6055296",
         "name": "Walter",
         "surname": "White",
-        "hireDate": "11/02/22",
+        "hireDate": "11/02/2022",
         "hourlyBaseRate": 8
     },
     {
         "id": "e3c140fb-8ec6-11ee-80e1-4cebbd1a8a06",
         "name": "Walter",
         "surname": "White",
-        "hireDate": "11/02/22",
+        "hireDate": "11/02/2022",
         "hourlyBaseRate": 8
     },
     {
         "id": "133bff6c-b2d4-11ee-876b-ddbb349e5847",
         "name": "Amelia",
         "surname": "Lis",
-        "hireDate": "01/02/24",
+        "hireDate": "01/02/2024",
         "hourlyBaseRate": 8
     }
 ]

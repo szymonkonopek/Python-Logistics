@@ -50,7 +50,7 @@ class AddDriverWindow:
         surname = self.surname_entry.get()
         hireDate_str = self.hireDate_entry.get()
         hireDate_obj = datetime.strptime(hireDate_str, '%Y-%m-%d').date()
-        formatted_hireDate = hireDate_obj.strftime('%m/%d/%y')
+        formatted_hireDate = hireDate_obj.strftime('%m/%d/%Y')
         hourlyBase = self.hourlyBase_entry.get()
         
         if callable(self.confirm_callback):
