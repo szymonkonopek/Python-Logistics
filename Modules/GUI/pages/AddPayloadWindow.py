@@ -7,7 +7,7 @@ from Modules.PayloadDangerous import PayloadDangerous
 
 class AddPayloadWindow:
     def __init__(self,app, confirm_callback, type):
-        self.renderPayloadWindow(app, confirm_callback, type)
+        self.renderPayloadWindow(app.root, confirm_callback, type)
         self.app = app
 
     def renderPayloadWindow(self,parent, confirm_callback, type):
