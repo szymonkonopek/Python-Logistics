@@ -40,5 +40,12 @@
         "surname": "ss",
         "hireDate": "12",
         "hourlyBaseRate": "12"
+    },
+    {
+        "id": "f5535b76-afe5-11ee-be73-a6cc5aae454f",
+        "name": "abc",
+        "surname": "def",
+        "hireDate": "10-12-2023",
+        "hourlyBaseRate": "10"
     }
 ]
