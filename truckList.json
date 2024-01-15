@@ -1,44 +1,5 @@
 [
     {
-        "id": "bd65600d-8669-4903-8a14-af88203add38",
-        "brand": "Scania",
-        "model": "R 730",
-        "capacity": "2000",
-        "fuelEconomy": "10",
-        "otherThings": ""
-    },
-    {
-        "id": "fc7ae01e-87d0-11ee-b173-a6cc5aae454f",
-        "brand": "Scania",
-        "model": "Scania",
-        "capacity": 2000,
-        "fuelEconomy": 14,
-        "otherThings": "otherThings"
-    },
-    {
-        "id": "194cdddc-87d1-11ee-b1cb-a6cc5aae454f",
-        "brand": "Scania",
-        "model": "Scania",
-        "capacity": 2000,
-        "fuelEconomy": 14,
-        "otherThings": "otherThings"
-    },
-    {
-        "id": "3ee13b1a-87d1-11ee-a1c7-a6cc5aae454f",
-        "brand": "Scania",
-        "model": "Scania",
-        "capacity": 2000,
-        "fuelEconomy": 14,
-        "otherThings": "otherThings"
-    },
-    {
-        "id": "fba8e576-a9b6-11ee-b739-4cebbd1a8a06",
-        "brand": "qW",
-        "model": "e",
-        "capacity": "t",
-        "fuelEconomy": "14"
-    },
-    {
         "id": "85b705ea-9290-4a70-a8e8-3a438ab74220",
         "brand": "tewst",
         "model": "tset",

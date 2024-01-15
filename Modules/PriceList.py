@@ -6,7 +6,7 @@ class PriceList:
     def getFuelPriceEuro(self):
         return self.fuelPriceEuro
     
-    # implement here dependencies of additional costs whether it's regular/dangarous or animal payload
+    # implement here dependencies of additional costs whether it's regular/dangarous or animal payload. Price is in Dollars $ per every 100km
     @staticmethod
     def getPayloadDangerousPrice(levelOfDanger):
     # 1 - type explosive
@@ -30,11 +30,3 @@ class PriceList:
             9: 5
         }
         return cases.get(levelOfDanger, "Invalid number")
-    
-
-    # If the tye of Payload is Animal, and the value of additionalInfo equals True, then the time of the Driver's work lengthen by 15%
-    def getPayloadAnimalMultiplier(booleanValue):
-        if (booleanValue):
-            return 1.15
-        else:
-            return 1

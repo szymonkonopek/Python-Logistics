@@ -27,12 +27,11 @@ class TruckChooserApp:
         self.root.title("Truck Chooser App")
 
         # to są wartości które są wpisane na stałe, trzeba zrobić tak zeby sie dynamicznie zmienaly
-        self.selectedDriver = Driver("Walter", "White", "01/01/2022", 8)
-        self.selectedPayload = PayloadDangerous('Dynamite', maxAllowedSpeed=80, levelOfDanger=90)
+        self.selectedDriver = Driver("giga chad", "ytes", "01/01/2024", 0)
+        self.selectedPayload = PayloadDangerous("pip", maxAllowedSpeed=12, levelOfDanger=1)
+        self.selectedTruck = Truck("kupa", "123", 0, 0, self.selectedPayload.getMaxAllowedSpeed)
 
-        self.selectedTruck = Truck('Scania truck', 'Scania', 2000, 14, self.selectedPayload.getMaxAllowedSpeed)
-
-        # First set e
+        # First select
         self.fromDestination = Destination()
         self.toDestination = Destination()
 

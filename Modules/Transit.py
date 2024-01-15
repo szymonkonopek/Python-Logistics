@@ -12,7 +12,6 @@ class Transit:
         self.priceList = priceList
         self.totalTime = None
 
-
     def getDistance(self):
         self.distance = Gpt.calcDistance(self.destA, self.destB)
         return self.distance
@@ -22,10 +21,15 @@ class Transit:
         fuelEconomy = getattr(self.truck, 'fuelEconomy')
         return (int) ((self.distance / 100.0) * fuelEconomy * self.priceList.getFuelPriceEuro())
     
-# Drivers' time is based on the covered distance, max allowed speed based on payload and driver's rest time for every 8 hours of driving
+# Drivers' total driving time is based on the covered distance, max allowed speed (based on payload) and driver's rest time for every 8 hours of driving.
+# Time after work is not counted (eg. for sleep, meals).
+# Also, if the payload type is Animal and the special needs are required, then the breaks are done every 4 hours, for the Animal safety.
     def calculateDriverTime(self):
         drivingTime = self.distance / getattr(self.payload, 'maxAllowedSpeed')
-        restTime = (int) (drivingTime / 8)
+        if (self.payload.type == "PayloadAnimal" and self.payload.specialNeeds == True):
+            restTime = (int) (drivingTime / 4)
+        else: 
+            restTime = (int) (drivingTime / 8)
         self.totalTime = drivingTime + restTime
         return self.totalTime
 
@@ -37,8 +41,15 @@ class Transit:
             return 1.2
         else:
             return 1
+        
+# Aditional cost
+    def additionalCost(self):
+        if (self.payload.type == "PayloadDangerous"):
+            return PriceList.getPayloadDangerousPrice(self.payload.levelOfDanger) * (self.getDistance() / 100)
+        return 0
+        
     
 # Function to calculate Drivers' salary
     def calculateDriverSalary(self):
-        total = (self.totalTime * getattr(self.driver, 'hourlyBaseRate') * (1 + ((self.driver.getYearsOfExperience())/5))) * self.getPayloadMultiplier()
+        total = (self.totalTime * getattr(self.driver, 'hourlyBaseRate') * (1 + ((self.driver.getYearsOfExperience())/5))) * self.getPayloadMultiplier() + self.additionalCost()
         return total

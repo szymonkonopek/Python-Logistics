@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk, StringVar, END
 from tkinter import ttk
 import json
 
@@ -10,30 +11,42 @@ class SelectBaseInfo():
 # Shows every label and form input
     def show(self):
         self.app.destroy_previous_widgets()
+
+# Select Truck combobox
         label_truck = ttk.Label(self.app.root, text="Select a Truck:")
         label_truck.pack(pady=10)
 
-        self.app.selected_truck = tk.StringVar()
+        self.truck_variable = StringVar(value = self.app.selectedTruck.getBrandModel())
         truck_models = [truck['model'] for truck in self.app.truck_data]
-        self.app.truck_dropdown = ttk.Combobox(self.app.root, values=truck_models, textvariable=self.app.selected_truck)
-        self.app.truck_dropdown.pack(pady=10)
+        self.truck_dropdown = ttk.Combobox(self.app.root, values=truck_models, textvariable=self.truck_variable)
+        self.truck_dropdown.pack(pady=10)
+        self.truck_dropdown.current()
 
+        self.truck_dropdown.bind("<<ComboboxSelected>>", self.on_truck_selected)
+
+# Select Driver combobox
         label_driver = ttk.Label(self.app.root, text="Select a Driver:")
         label_driver.pack(pady=10)
 
-        self.app.selected_driver = tk.StringVar()
+        self.driver_variable = StringVar(value = self.app.selectedDriver.getNameSurname())
         driver_names = [f"{driver['name']} {driver['surname']}" for driver in self.app.driver_data]
-        self.app.driver_dropdown = ttk.Combobox(self.app.root, values=driver_names, textvariable=self.app.selected_driver)
-        self.app.driver_dropdown.pack(pady=10)
+        self.driver_dropdown = ttk.Combobox(self.app.root, values=driver_names, textvariable=self.driver_variable)
+        self.driver_dropdown.pack(pady=10)
 
+        self.driver_dropdown.bind("<<ComboboxSelected>>", self.on_driver_selected)
+
+# Select Payload combobox
         label_payload = ttk.Label(self.app.root, text="Select a Payload:")
         label_payload.pack(pady=10)
 
-        self.app.selected_payload = tk.StringVar()
+        self.payload_variable = StringVar(value = self.app.selectedPayload.getName())
         payload_names = [f"{payload['name']}" for payload in self.app.payload_data]
-        self.app.payload_dropdown = ttk.Combobox(self.app.root, values=payload_names, textvariable=self.app.selected_payload)
-        self.app.payload_dropdown.pack(pady=10)
+        self.payload_dropdown = ttk.Combobox(self.app.root, values=payload_names, textvariable=self.payload_variable)
+        self.payload_dropdown.pack(pady=10)
 
+        self.payload_dropdown.bind("<<ComboboxSelected>>", self.on_payload_selected)
+
+# Show info and next page info
         show_info_button = ttk.Button(self.app.root, text="Show Info", command=self.app.info.show)
         show_info_button.pack(pady=10)
 
@@ -50,5 +63,14 @@ class SelectBaseInfo():
         add_payload_button.pack(pady=10)
         
         
-        
+    def on_truck_selected(self, event):
+        self.app.selectedTruck = self.truck_variable.get()
+        print(f"Selected Truck: {self.truck_variable.get()}")
 
+    def on_driver_selected(self, event):
+        self.app.selectedDriver = self.driver_variable.get()
+        print(f"Selected Driver: {self.driver_variable.get()}")
+
+    def on_payload_selected(self, event):
+        self.app.selectedPayload = self.payload_variable.get()
+        print(f"Selected Driver: {self.payload_variable.get()}")
