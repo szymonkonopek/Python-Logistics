@@ -9,8 +9,8 @@ import json
 
 class Gpt:
     def __init__(self):
-        self.yes = True
-
+        pass
+    
     @staticmethod
     def calcDistance(cityA, cityB):
         completion = client.chat.completions.create(model="gpt-3.5-turbo",
