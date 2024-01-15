@@ -1,4 +1,5 @@
-from Modules.Gpt import Gpt
+# from Modules.Gpt import Gpt
+from Modules.GoogleMaps import GoogleMaps
 from Modules.PriceList import PriceList
 
 # Class for calculating all of the Transit dependecies like Fuel Price, Driver's Time, Driver's experience
@@ -14,7 +15,7 @@ class Transit:
 
 
     def getDistance(self):
-        self.distance = Gpt.calcDistance(self.destA, self.destB)
+        self.distance = GoogleMaps.calcDistance(self.destA, self.destB)
         return self.distance
 
 # An average price of fuel based on the covered distance and average fuel economy of a Truck
