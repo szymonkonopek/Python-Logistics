@@ -1,5 +1,6 @@
 import json
 from datetime import date
+from Modules.Driver import Driver
 
 # Class which constructs and operates functions on driversList.json file 
 class DriversList():
@@ -32,7 +33,9 @@ class DriversList():
     
 # Function which returns a Driver object from given id
     def getDriver(self, driver_id):
-        for driver in self.driversList:
+        with open('driversList.json', 'r') as f:
+            driversList = json.load(f)
+        for driver in driversList:
             if driver['id'] == driver_id:
                 return driver
         return None
@@ -50,3 +53,6 @@ class DriversList():
                     json.dump(self.driversList, f)
                 return True
         return False
+    
+    def jsonToDriver(self, driverJson):
+        return Driver(driverJson['name'], driverJson['surname'], driverJson['hireDate'], int(driverJson['hourlyBaseRate']))

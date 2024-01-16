@@ -28,7 +28,7 @@ class TruckList:
     
 # Transforms json dictionary object to Truck class object
     def jsonToTruck(self, truckJson):
-        return Truck(truckJson['brand'], truckJson['model'], int(truckJson['capacity']), int(truckJson['fuelEconomy']), truckJson['otherThings'])
+        return Truck(truckJson['brand'], truckJson['model'], int(truckJson['capacity']), int(truckJson['fuelEconomy']), int(truckJson['maxAllowedSpeed']))
 
 # Deletes Truck with given id from truckList.json
     def deleteTruck(self, truck_id):
@@ -38,7 +38,9 @@ class TruckList:
     
 # Function which returns a Truck object from given id
     def getTruck(self, truck_id):
-        for truck in self.truckList:
+        with open('truckList.json', 'r') as f:
+            truckList = json.load(f)
+        for truck in truckList:
             if truck['id'] == truck_id:
                 return truck
         return None

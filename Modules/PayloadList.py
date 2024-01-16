@@ -48,25 +48,25 @@ class PayloadList:
         payload_type = json_data.get("type", None)
         if payload_type == "PayloadRegular":
             return PayloadRegular(
-                json_data["id"],
+                #json_data["id"],
                 json_data["name"],
-                json_data["type"],
+                #json_data["type"],
                 json_data["maxAllowedSpeed"],
                 json_data["weight"]
             )
         elif payload_type == "PayloadAnimal":
             return PayloadAnimal(
-                json_data["id"],
+                #json_data["id"],
                 json_data["name"],
-                json_data["type"],
+                #json_data["type"],
                 json_data["maxAllowedSpeed"],
                 json_data["specialNeeds"]
             )
         elif payload_type == "PayloadDangerous":
             return PayloadDangerous(
-                json_data["id"],
+                #json_data["id"],
                 json_data["name"],
-                json_data["type"],
+                #json_data["type"],
                 json_data["maxAllowedSpeed"],
                 json_data["levelOfDanger"]
             )
@@ -81,7 +81,9 @@ class PayloadList:
 
 # Function which returns a Payload object from given id
     def getPayload(self, payload_id):
-        for payload in self.payloadList:
+        with open('payloadList.json', 'r') as f:
+            payloadList = json.load(f)
+        for payload in payloadList:
             if payload['id'] == payload_id:
                 return payload
         return None

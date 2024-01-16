@@ -26,5 +26,12 @@
         "surname": "Kowalski",
         "hireDate": "01/14/2024",
         "hourlyBaseRate": 90
+    },
+    {
+        "id": "e421e694-b3e4-11ee-a8e3-4cebbd1a8a06",
+        "name": "test",
+        "surname": "pp",
+        "hireDate": "01/15/2024",
+        "hourlyBaseRate": 33
     }
 ]

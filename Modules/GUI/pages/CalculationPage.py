@@ -10,13 +10,13 @@ class CalculationPage:
         label_calculation = ttk.Label(self.app.root, text="Calculation:")
         label_calculation.pack(pady=10)
 
-        label_driver = ttk.Label(self.app.root, text=f"Driver: {self.app.selectedDriver.getNameSurname()}")
+        label_driver = ttk.Label(self.app.root, text=f"Driver: {self.app.selectedDriver}")#.getNameSurname()
         label_driver.pack(pady=10)
 
-        label_truck = ttk.Label(self.app.root, text=f"Truck: {self.app.selectedTruck.getBrandModel()}")
+        label_truck = ttk.Label(self.app.root, text=f"Truck: {self.app.selectedTruck}")#.getBrandModel()
         label_truck.pack(pady=10)
 
-        label_payload = ttk.Label(self.app.root, text=f"Payload: {self.app.selectedPayload.getName()}")
+        label_payload = ttk.Label(self.app.root, text=f"Payload: {self.app.selectedPayload}")#.getName()
         label_payload.pack(pady=10)
 
         label_from = ttk.Label(self.app.root, text=f"From: {self.app.fromDestination}")

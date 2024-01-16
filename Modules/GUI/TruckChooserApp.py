@@ -10,8 +10,9 @@ from Modules.Transit import Transit
 from Modules.GUI.pages.AddDriverWindow import AddDriverWindow
 from Modules.GUI.pages.AddPayloadWindow import AddPayloadWindow
 from Modules.GUI.pages.AddTruckWindow import AddTruckWindow
-
-
+from Modules.GUI.GetLastElements import GetLastDriver
+from Modules.GUI.GetLastElements import GetLastTruck
+from Modules.GUI.GetLastElements import GetLastPayload
 
 
 from Modules.Truck import Truck
@@ -26,11 +27,20 @@ class TruckChooserApp:
         self.root = root
         self.root.title("Truck Chooser App")
 
+        # Pobranie ostatnio dodanych kierowcy, ładunku i samochodu 
+        lastDriver = GetLastDriver()
+        lastTruck = GetLastTruck()
+        lastPayload = GetLastPayload()
+        
+        
         # to są wartości które są wpisane na stałe, trzeba zrobić tak zeby sie dynamicznie zmienaly
-        self.selectedDriver = Driver("Jan", "Kowalski", "01/01/2024", 5)
-        self.selectedPayload = PayloadDangerous("Gases", maxAllowedSpeed=12, levelOfDanger=1)
-        self.selectedTruck = Truck("Nissan", "GT", 2000, 20, self.selectedPayload.getMaxAllowedSpeed)
+        self.selectedDriver = lastDriver.getNameSurname()
+        self.selectedPayload = lastPayload.name
+        self.selectedTruck = lastTruck.model
 
+        self.selectedDriverObj = lastDriver
+        self.selectedPayloadObj = lastPayload
+        self.selectedTruckObj = lastTruck
         # First select
         self.fromDestination = Destination()
         self.toDestination = Destination()
@@ -59,9 +69,9 @@ class TruckChooserApp:
 
     def calculate(self):
         transit = Transit(
-            self.selectedDriver,
-            self.selectedTruck, 
-            self.selectedPayload, 
+            self.selectedDriverObj,
+            self.selectedTruckObj, 
+            self.selectedPayloadObj, 
             self.fromDestination.getName(), 
             self.toDestination.getName(), 
             PriceList())
