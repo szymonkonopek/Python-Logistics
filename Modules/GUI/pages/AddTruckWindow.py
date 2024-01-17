@@ -1,4 +1,4 @@
-from tkinter import Toplevel, Label, Entry, Button
+from tkinter import Toplevel, Label, Entry, Button, StringVar, messagebox
 from Modules.Truck import Truck
 from Modules.TruckList import TruckList
 
@@ -33,15 +33,18 @@ class AddTruckWindow:
         self.model_entry.pack()
         
         Label(self.add_truck_window, text="Capacity:").pack()
-        self.capacity_entry = Entry(self.add_truck_window)
+        self.capacity_var = StringVar()
+        self.capacity_entry = Entry(self.add_truck_window, textvariable=self.capacity_var, validate="key", validatecommand=(self.add_truck_window.register(self.validate_capacity), "%P"))
         self.capacity_entry.pack()
 
         Label(self.add_truck_window, text="Fuel Economy:").pack()
-        self.fuelEconomy_entry = Entry(self.add_truck_window)
+        self.fuel_var = StringVar()
+        self.fuelEconomy_entry = Entry(self.add_truck_window, textvariable=self.fuel_var, validate="key", validatecommand=(self.add_truck_window.register(self.validate_speed), "%P"))
         self.fuelEconomy_entry.pack()        
 
         Label(self.add_truck_window, text="Max allowed Speed:").pack()
-        self.maxallowedspeed_entry = Entry(self.add_truck_window)
+        self.truck_Vmax_var = StringVar()
+        self.maxallowedspeed_entry = Entry(self.add_truck_window, textvariable=self.truck_Vmax_var,validate="key", validatecommand=(self.add_truck_window.register(self.validate_speed), "%P"))
         self.maxallowedspeed_entry.pack()        
 
         #brand, model, Capacity, fuelEconomy
@@ -66,3 +69,45 @@ class AddTruckWindow:
             self.app.destroy_previous_widgets()
             self.app.load_truck_data()
             self.app.selectDriver.show()
+
+    def validate_speed(self, new_value):
+        try:
+            # Attempt to convert the input to an integer
+            if new_value:
+                int(new_value)
+                if int(new_value) > 150:
+                    messagebox.showerror("Error", "Max allowed speed cannot exceed 120 kilometers per hour.")
+                    return False
+            return True
+        except ValueError:
+            # If conversion fails, show an error message
+            messagebox.showerror("Error", "Please enter a valid integer.")
+            return False
+        
+    def validate_fuel(self, new_value):
+        try:
+            # Attempt to convert the input to an integer
+            if new_value:
+                int(new_value)
+                if int(new_value) > 75:
+                    messagebox.showerror("Error", "Maximum value for an average fuel consumption is 75 litres.")
+                    return False
+            return True
+        except ValueError:
+            # If conversion fails, show an error message
+            messagebox.showerror("Error", "Please enter a valid integer.")
+            return False
+    
+    def validate_capacity(self, new_value):
+        try:
+            # Attempt to convert the input to an integer
+            if new_value:
+                int(new_value)
+                if int(new_value) > 3000 or int(new_value) < 50000:
+                    messagebox.showerror("Error", "Please enter a capacity value between 3000 kilograms and 50000 kilograms")
+                    return False
+            return True
+        except ValueError:
+            # If conversion fails, show an error message
+            messagebox.showerror("Error", "Please enter a valid integer.")
+            return False

@@ -6,7 +6,7 @@ class PriceList:
     def getFuelPriceEuro(self):
         return self.fuelPriceEuro
     
-    # implement here dependencies of additional costs whether it's regular/dangarous or animal payload. Price is in Dollars $ per every 100km
+    # additional cost for every 100km in dollars, depending on a type of a payload
     @staticmethod
     def getPayloadDangerousPrice(levelOfDanger):
     # 1 - type explosive

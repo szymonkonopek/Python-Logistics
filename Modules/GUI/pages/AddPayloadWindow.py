@@ -42,15 +42,18 @@ class AddPayloadWindow:
         
         Label(self.add_payload_window, text="Max allowed speed:").pack()
         self.Vmax_var = StringVar()
-        self.Vmax_entry = Entry(self.add_payload_window, textvariable=self.Vmax_var, validate="key", validatecommand=(self.add_payload_window.register(self.validate_input), "%P"))
+        self.Vmax_entry = Entry(self.add_payload_window, textvariable=self.Vmax_var, validate="key", validatecommand=(self.add_payload_window.register(self.validate_speed), "%P"))
         self.Vmax_entry.pack()
 
         if (type == 'PayloadRegular'):
+
             Label(self.add_payload_window, text="Weight:").pack()
             self.weight_var = StringVar()
-            self.additionalInfo_entry = Entry(self.add_payload_window, textvariable=self.weight_var, validate="key", validatecommand=(self.add_payload_window.register(self.validate_input), "%P"))
+            self.additionalInfo_entry = Entry(self.add_payload_window, textvariable=self.weight_var, validate="key", validatecommand=(self.add_payload_window.register(self.validate_weight), "%P"))
             self.additionalInfo_entry.pack()
+
         elif (type == 'PayloadAnimal'):
+
             Label(self.add_payload_window, text="Special Needs:").pack()
             Label(self.add_payload_window, text="Choose true or false, if the ").pack()
             Label(self.add_payload_window, text="payload requires more transport breaks.").pack()
@@ -59,7 +62,9 @@ class AddPayloadWindow:
             self.additionalInfo_cb['state'] = 'readonly'
             self.additionalInfo_cb.pack()
             self.additionalInfo_entry = self.additionalInfo_cb
+
         elif (type == 'PayloadDangerous'):
+            
             Label(self.add_payload_window, text="Level Of Danger:").pack()
             Label(self.add_payload_window, text="Choose one class ").pack()
             Label(self.add_payload_window, text="among 9 available.").pack()
@@ -112,11 +117,28 @@ class AddPayloadWindow:
             self.app.load_payload_data()
             self.app.selectDriver.show()
 
-    def validate_input(self, new_value):
+    def validate_speed(self, new_value):
         try:
             # Attempt to convert the input to an integer
             if new_value:
                 int(new_value)
+                if int(new_value) > 150:
+                    messagebox.showerror("Error", "Max allowed speed cannot exceed 120 kilometers per hour.")
+                    return False
+            return True
+        except ValueError:
+            # If conversion fails, show an error message
+            messagebox.showerror("Error", "Please enter a valid integer.")
+            return False
+        
+    def validate_weight(self, new_value):
+        try:
+            # Attempt to convert the input to an integer
+            if new_value:
+                int(new_value)
+                if int(new_value) > 150:
+                    messagebox.showerror("Error", "Max weight cannot exceed 22000 kilograms.")
+                    return False
             return True
         except ValueError:
             # If conversion fails, show an error message

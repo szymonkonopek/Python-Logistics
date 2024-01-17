@@ -42,7 +42,7 @@ class AddDriverWindow:
         
         #hourly base rate
         self.hourlyBaseRate_var = StringVar()
-        Label(self.add_driver_window, text="Hourly base rate:").pack()
+        Label(self.add_driver_window, text="Hourly base rate in dollars:").pack()
         self.hourlyBase_entry = Entry(self.add_driver_window, textvariable=self.hourlyBaseRate_var, validate="key", validatecommand=(self.add_driver_window.register(self.validate_input), "%P"))
         self.hourlyBase_entry.pack()
 

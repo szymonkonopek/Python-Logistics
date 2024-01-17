@@ -32,7 +32,7 @@ class Transit:
         else: 
             restTime = (int) (drivingTime / 8)
         self.totalTime = drivingTime + restTime
-        return self.totalTime
+        return round(self.totalTime, 2)
 
 # Depending on the kind of the Payload, the multiplier of the salary variable may differ
     def getPayloadMultiplier(self):
@@ -53,4 +53,4 @@ class Transit:
 # Function to calculate Drivers' salary
     def calculateDriverSalary(self):
         total = (self.totalTime * getattr(self.driver, 'hourlyBaseRate') * (1 + ((self.driver.getYearsOfExperience())/5))) * self.getPayloadMultiplier() + self.additionalCost()
-        return total
+        return round(total,2)

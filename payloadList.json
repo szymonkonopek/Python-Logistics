@@ -33,12 +33,5 @@
         "type": "PayloadAnimal",
         "maxAllowedSpeed": 80,
         "specialNeeds": true
-    },
-    {
-        "id": "960b0094-5edc-4703-83d7-acb2cfd3294c",
-        "name": "Wiktor Bestia",
-        "type": "PayloadAnimal",
-        "maxAllowedSpeed": 420,
-        "specialNeeds": true
     }
 ]
