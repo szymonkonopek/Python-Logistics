@@ -27,17 +27,19 @@ class TruckChooserApp:
         self.root = root
         self.root.title("Truck Chooser App")
 
-        # Pobranie ostatnio dodanych kierowcy, ładunku i samochodu 
+        # Getting recently added drivers, trucks and payloads 
         lastDriver = GetLastDriver()
         lastTruck = GetLastTruck()
         lastPayload = GetLastPayload()
         
         
-        # to są wartości które są wpisane na stałe, trzeba zrobić tak zeby sie dynamicznie zmienaly
+        # Dynamic variables while choosing a driver, truck or payload
         self.selectedDriver = lastDriver.getNameSurname()
-        self.selectedPayload = lastPayload.name
-        self.selectedTruck = lastTruck.model
+        self.selectedPayload = lastPayload.getName()
+        self.selectedTruck = lastTruck.getBrandModel()
 
+        # this still does not work. it can't fetch chosen driver, truck, payload.
+        # instead it fetches the lastly added object, which is not okay. 
         self.selectedDriverObj = lastDriver
         self.selectedPayloadObj = lastPayload
         self.selectedTruckObj = lastTruck

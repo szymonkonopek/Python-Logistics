@@ -16,8 +16,8 @@ class SelectBaseInfo():
         label_truck = ttk.Label(self.app.root, text="Select a Truck:")
         label_truck.pack(pady=10)
 
-        self.truck_variable = StringVar(value = self.app.selectedTruck)#.getBrandModel())
-        truck_models = [truck['model'] for truck in self.app.truck_data]
+        self.truck_variable = StringVar(value = self.app.selectedTruck)
+        truck_models = [f"{truck['brand']} {truck['model']}" for truck in self.app.truck_data]
         self.truck_dropdown = ttk.Combobox(self.app.root, values=truck_models, textvariable=self.truck_variable)
         self.truck_dropdown.pack(pady=10)
         self.truck_dropdown.current()
@@ -28,7 +28,7 @@ class SelectBaseInfo():
         label_driver = ttk.Label(self.app.root, text="Select a Driver:")
         label_driver.pack(pady=10)
 
-        self.driver_variable = StringVar(value = self.app.selectedDriver)#.getNameSurname())
+        self.driver_variable = StringVar(value = self.app.selectedDriver)
         driver_names = [f"{driver['name']} {driver['surname']}" for driver in self.app.driver_data]
         self.driver_dropdown = ttk.Combobox(self.app.root, values=driver_names, textvariable=self.driver_variable)
         self.driver_dropdown.pack(pady=10)
@@ -39,7 +39,7 @@ class SelectBaseInfo():
         label_payload = ttk.Label(self.app.root, text="Select a Payload:")
         label_payload.pack(pady=10)
 
-        self.payload_variable = StringVar(value = self.app.selectedPayload)#.getName())
+        self.payload_variable = StringVar(value = self.app.selectedPayload)
         payload_names = [f"{payload['name']}" for payload in self.app.payload_data]
         self.payload_dropdown = ttk.Combobox(self.app.root, values=payload_names, textvariable=self.payload_variable)
         self.payload_dropdown.pack(pady=10)
@@ -50,7 +50,7 @@ class SelectBaseInfo():
         show_info_button = ttk.Button(self.app.root, text="Show Info", command=self.app.info.show)
         show_info_button.pack(pady=10)
 
-        nextPage = ttk.Button(self.app.root, text="Next", command=self.app.selectDestination.show)
+        nextPage = ttk.Button(self.app.root, text="Select destination", command=self.app.selectDestination.show)
         nextPage.pack(pady=10)
 
 # Button to add new Driver, Truck or Payload

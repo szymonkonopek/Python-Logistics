@@ -20,6 +20,8 @@ class SelectDestination:
             label_destination = ttk.Label(self.app.root, text="Select a Destination:")
             label_destination.pack(pady=10)
 
+
+    # From destination
             dest_label1 = ttk.Label(self.app.root, text="From: ")
             dest_label1.pack(pady=10)
             self.sv1 = StringVar()
@@ -29,6 +31,7 @@ class SelectDestination:
             self.sv1.trace_add("write", self.onFromEntrySubmit)
             entry_from.pack(pady=10)
 
+    # To destination
             dest_label2 = ttk.Label(self.app.root, text="To: ")
             dest_label2.pack(pady=10)
             self.sv2 = StringVar()
@@ -39,9 +42,9 @@ class SelectDestination:
             entry_to.pack(pady=10)
 
     # Button to return to the previous page
-            prevPage = ttk.Button(self.app.root, text="Previous", command=self.app.selectDriver.show)
+            prevPage = ttk.Button(self.app.root, text="Previous page", command=self.app.selectDriver.show)
             prevPage.pack(pady=10)
     
     # Button to go to the next page
-            nextPage = ttk.Button(self.app.root, text="Next", command=self.app.calculationPage.show)
+            nextPage = ttk.Button(self.app.root, text="Summary", command=self.app.calculationPage.show)
             nextPage.pack(pady=10)

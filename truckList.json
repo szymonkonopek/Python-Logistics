@@ -5,7 +5,7 @@
         "model": "lol",
         "capacity": 10,
         "fuelEconomy": 15,
-        "maxAllowedSpeed": 120
+        "maxAllowedSpeed": 50
     },
     {
         "id": "4cb44df5-95bd-4049-a8c4-bc5715996d02",
@@ -21,6 +21,6 @@
         "model": "AMG ",
         "capacity": 111,
         "fuelEconomy": 45,
-        "maxAllowedSpeed": 120
+        "maxAllowedSpeed": 80
     }
 ]

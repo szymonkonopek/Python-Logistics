@@ -32,6 +32,9 @@ class CalculationPage:
         calculate_button.pack(pady=10)
 
     def showCalculations(self):
+        # to implement
+        #if (self.app.selectedPayoad.type == "PayloadRegular" and self.app.selectedPayload.weight > self.app.selectedTruck.capacity) :
+        # display error message 
         label_distance = ttk.Label(self.app.root, text=f"Distance: {self.app.distance}")
         label_distance.pack(pady=10)
 

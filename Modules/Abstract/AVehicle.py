@@ -9,4 +9,7 @@ class AVehicle(ABC):
         self.brand = brand
         self.model = model
         self.capacity = capacity
-        self.fuelEconomy = fuelEconomy   
+        self.fuelEconomy = fuelEconomy
+
+    def getModel(self):
+        return self.model
