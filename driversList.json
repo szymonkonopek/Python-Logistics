@@ -1,43 +1,36 @@
 [
     {
-        "id": "e3c140fb-8ec6-11ee-80e1-4cebbd1a8a06",
-        "name": "Walter",
-        "surname": "White",
-        "hireDate": "11/02/2022",
-        "hourlyBaseRate": 8
-    },
-    {
         "id": "133bff6c-b2d4-11ee-876b-ddbb349e5847",
-        "name": "Amelia",
-        "surname": "Lis",
+        "name": "Amy",
+        "surname": "Fox",
         "hireDate": "01/02/2024",
-        "hourlyBaseRate": 8
+        "hourlyBaseRate": 10
     },
     {
         "id": "b5057534-b2fd-11ee-9595-a6cc5aae454f",
-        "name": "Szymito",
-        "surname": "Yesyes",
+        "name": "Simon",
+        "surname": "Conopsky",
         "hireDate": "01/14/2024",
-        "hourlyBaseRate": 123
+        "hourlyBaseRate": 25
     },
     {
         "id": "fa6fcad4-b32a-11ee-876b-ddbb349e5847",
         "name": "Jan",
         "surname": "Kowalski",
         "hireDate": "01/14/2024",
-        "hourlyBaseRate": 90
+        "hourlyBaseRate": 12
     },
     {
         "id": "e421e694-b3e4-11ee-a8e3-4cebbd1a8a06",
-        "name": "test",
-        "surname": "pp",
+        "name": "Wiktor",
+        "surname": "Groats",
         "hireDate": "01/15/2024",
-        "hourlyBaseRate": 33
+        "hourlyBaseRate": 30
     },
     {
         "id": "6fac0234-b63e-11ee-8686-217724fe9272",
-        "name": "Ma\u0142gosia",
-        "surname": "Lis",
+        "name": "Margaret",
+        "surname": "Zorro",
         "hireDate": "01/09/2024",
         "hourlyBaseRate": 20
     }

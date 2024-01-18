@@ -11,7 +11,6 @@ class DriversList():
 # Add Driver object to the truckList.json
     def addDriver(self, driver):
         self.driversList.append(self.driverToJson(driver))
-        print('drivers list', self.driversList)
         with open('driversList.json', 'w') as f:
             json.dump(self.driversList, f, indent=4)
 

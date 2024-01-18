@@ -26,22 +26,13 @@ class TruckChooserApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Truck Chooser App")
-
-        # Getting recently added drivers, trucks and payloads 
-        # lastDriver = GetLastDriver()
-        # lastTruck = GetLastTruck()
-        # lastPayload = GetLastPayload()
-        
         
         # Dynamic variables while choosing a driver, truck or payload
         self.selectedDriver = Driver("","","",0)
         self.selectedPayload = PayloadDangerous("","",0)
         self.selectedTruck = Truck("","",0,0,0)
 
-        # this still does not work. it can't fetch chosen driver, truck, payload.
-        # instead it fetches the lastly added object, which is not okay. 
-       
-        # First select
+        # Select Destination
         self.fromDestination = Destination()
         self.toDestination = Destination()
 

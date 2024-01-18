@@ -1,25 +1,25 @@
 [
     {
         "id": "d69eceaa-aaec-4895-b724-cedb57971080",
-        "brand": "lol",
-        "model": "lol",
-        "capacity": 500,
+        "brand": "MAN",
+        "model": "eTGX",
+        "capacity": 18800,
         "fuelEconomy": 15,
-        "maxAllowedSpeed": 50
+        "maxAllowedSpeed": 120
     },
     {
         "id": "4cb44df5-95bd-4049-a8c4-bc5715996d02",
-        "brand": "tesla",
-        "model": "S",
-        "capacity": 6000,
+        "brand": "Mercedes",
+        "model": "Actros",
+        "capacity": 23000,
         "fuelEconomy": 20,
         "maxAllowedSpeed": 120
     },
     {
         "id": "6c4243ce-44fd-4b93-8615-a8f7c1458204",
         "brand": "Mercedes",
-        "model": "AMG ",
-        "capacity": 12000,
+        "model": "Atego",
+        "capacity": 13500,
         "fuelEconomy": 45,
         "maxAllowedSpeed": 80
     }

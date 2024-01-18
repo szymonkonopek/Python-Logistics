@@ -24,8 +24,6 @@ class SelectBaseInfo():
         self.truck_dropdown = ttk.Combobox(self.app.root, values=truck_models, textvariable=self.truck_variable)
         self.truck_dropdown.pack(pady=10)
 
-        # self.truck_dropdown.current()
-
         self.truck_dropdown.bind("<<ComboboxSelected>>", self.on_truck_selected)
 
 # Select Driver combobox
@@ -54,7 +52,7 @@ class SelectBaseInfo():
         show_info_button = ttk.Button(self.app.root, text="Show Info", command=self.app.info.show)
         show_info_button.pack(pady=10)
 
-        nextPage = ttk.Button(self.app.root, text="Select destination", command=self.app.selectDestination.show)
+        nextPage = ttk.Button(self.app.root, text="Next", command=self.app.selectDestination.show)
         nextPage.pack(pady=10)
 
 # Button to add new Driver, Truck or Payload
@@ -69,7 +67,6 @@ class SelectBaseInfo():
         
     def on_truck_selected(self, event):
         self.app.selectedTruck = TruckList.jsonToTruck(self.app.truck_data[self.truck_dropdown.current()])
-        print( self.truck_dropdown.current())
 
     def on_driver_selected(self, event):
         self.app.selectedDriver = DriversList.jsonToDriver(self.app.driver_data[self.driver_dropdown.current()])

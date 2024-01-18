@@ -1,16 +1,16 @@
 [
     {
         "id": "7ae4b3f6-f2f7-49a2-ac4d-30698cd135e8",
-        "name": "Rekin",
+        "name": "Sharks",
         "type": "PayloadAnimal",
-        "maxAllowedSpeed": 50,
+        "maxAllowedSpeed": 80,
         "specialNeeds": true
     },
     {
         "id": "d24ce458-f48d-4ed9-9a30-eb21405dda6d",
         "name": "Cow",
         "type": "PayloadAnimal",
-        "maxAllowedSpeed": 30,
+        "maxAllowedSpeed": 80,
         "specialNeeds": true
     },
     {
@@ -29,7 +29,7 @@
     },
     {
         "id": "48c4739e-ea94-4d6f-a165-f57259487f79",
-        "name": "Foczki",
+        "name": "Seals",
         "type": "PayloadAnimal",
         "maxAllowedSpeed": 80,
         "specialNeeds": true
@@ -38,7 +38,7 @@
         "id": "dbbe4348-5283-465f-bb9a-d783af8b3108",
         "name": "Sugar",
         "type": "PayloadRegular",
-        "maxAllowedSpeed": 150,
+        "maxAllowedSpeed": 100,
         "weight": 55000
     }
 ]

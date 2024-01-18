@@ -26,14 +26,11 @@ class AddPayloadWindow:
         self.add_payload_window.geometry(f"{window_width}x{window_height}+{x_coordinate}+{y_coordinate}")
 
         Label(self.add_payload_window, text="Type:").pack()
-        # create a combobox
         self.selected_type = "aaa"
         self.payloadtype_cb = ttk.Combobox(self.add_payload_window, textvariable=self.selected_type)
-        # get first 3 letters of every month name
+
         self.payloadtype_cb['values'] = ('PayloadRegular', 'PayloadAnimal', 'PayloadDangerous')
-        # prevent typing a value
         self.payloadtype_cb['state'] = 'readonly'
-        # place the widget
         self.payloadtype_cb.pack()
 
         Label(self.add_payload_window, text="Name:").pack()
@@ -74,11 +71,6 @@ class AddPayloadWindow:
             self.additionalInfo_cb.pack()
             self.additionalInfo_entry = self.additionalInfo_cb
 
-        
-        #Label(self.add_payload_window, text="level Of Danger:").pack()
-        #self.dangerLevel_entry = Entry(self.add_payload_window)
-        #self.dangerLevel_entry.pack()
-        #maxAllowedSpeed, levelOfDanger
 
         confirm_button = Button(self.add_payload_window, text="Add Payload", command=self.confirm_add_payload)
         confirm_button.pack()
@@ -86,7 +78,6 @@ class AddPayloadWindow:
         self.payloadtype_cb.bind('<<ComboboxSelected>>', self.typeChanged)
 
     def typeChanged(self, event):
-        print(self.payloadtype_cb.get())
         AddPayloadWindow(self.app, self.confirm_callback, self.payloadtype_cb.get())
         self.add_payload_window.destroy()
 
@@ -99,15 +90,17 @@ class AddPayloadWindow:
         #dangerLevel = self.dangerLevel_entry.get()
 
         if callable(self.confirm_callback):
-            print(self.payloadtype_cb.get())
             self.confirm_callback(name, payload_type)
             payloadList = PayloadList()
+
             if (self.payloadtype_cb.get() == 'PayloadRegular'):
                 newPayload = PayloadRegular(name, int(Vmax), int(additionalInfo))
                 payloadList.addPayload(newPayload)
+
             elif (self.payloadtype_cb.get() == 'PayloadAnimal'):
                 newPayload = PayloadAnimal(name, int(Vmax), bool(additionalInfo))
                 payloadList.addPayload(newPayload)
+
             elif (self.payloadtype_cb.get() == 'PayloadDangerous'):
                 newPayload = PayloadDangerous(name, int(Vmax), int(additionalInfo))
                 payloadList.addPayload(newPayload)
@@ -119,7 +112,6 @@ class AddPayloadWindow:
 
     def validate_speed(self, new_value):
         try:
-            # Attempt to convert the input to an integer
             if new_value:
                 int(new_value)
                 if int(new_value) > 150:
@@ -127,13 +119,11 @@ class AddPayloadWindow:
                     return False
             return True
         except ValueError:
-            # If conversion fails, show an error message
             messagebox.showerror("Error", "Please enter a valid integer.")
             return False
         
     def validate_weight(self, new_value):
         try:
-            # Attempt to convert the input to an integer
             if new_value:
                 int(new_value)
                 if int(new_value) > 100000:
@@ -141,6 +131,5 @@ class AddPayloadWindow:
                     return False
             return True
         except ValueError:
-            # If conversion fails, show an error message
             messagebox.showerror("Error", "Please enter a valid integer.")
             return False
