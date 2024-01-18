@@ -1,4 +1,4 @@
-from tkinter import ttk
+from tkinter import messagebox, ttk
 
 # GUI for Calculation page
 class CalculationPage:
@@ -32,20 +32,23 @@ class CalculationPage:
         calculate_button.pack(pady=10)
 
     def showCalculations(self):
-        # to implement
-        #if (self.app.selectedPayoad.type == "PayloadRegular" and self.app.selectedPayload.weight > self.app.selectedTruck.capacity) :
-        # display error message 
-        label_distance = ttk.Label(self.app.root, text=f"Distance: {self.app.distance}")
-        label_distance.pack(pady=10)
+        if (self.app.selectedPayload.type == "PayloadRegular" and self.app.selectedPayload.weight > self.app.selectedTruck.capacity):
+            error_label = ttk.Label(self.app.root, text="Error: Payload weighs more than the available capacity of a selected truck.\n"
+                                    "Please choose proper truck.")
+            error_label.config(foreground="red")
+            error_label.pack(pady=10)
+        else:
+            label_distance = ttk.Label(self.app.root, text=f"Distance: {self.app.distance}")
+            label_distance.pack(pady=10)
 
-        label_fuelPrice = ttk.Label(self.app.root, text=f"Fuel Price: {self.app.fuelPrice}")
-        label_fuelPrice.pack(pady=10)
+            label_fuelPrice = ttk.Label(self.app.root, text=f"Fuel Price: {self.app.fuelPrice}")
+            label_fuelPrice.pack(pady=10)
 
-        label_driverTime = ttk.Label(self.app.root, text=f"Driver Time: {self.app.driverTime}")
-        label_driverTime.pack(pady=10)
+            label_driverTime = ttk.Label(self.app.root, text=f"Driver Time: {self.app.driverTime}")
+            label_driverTime.pack(pady=10)
 
-        label_driverSalary = ttk.Label(self.app.root, text=f"Driver Salary: {self.app.driverSalary}")
-        label_driverSalary.pack(pady=10)
+            label_driverSalary = ttk.Label(self.app.root, text=f"Driver Salary: {self.app.driverSalary}")
+            label_driverSalary.pack(pady=10)
     
 
   

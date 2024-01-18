@@ -70,12 +70,9 @@ class SelectBaseInfo():
     def on_truck_selected(self, event):
         self.app.selectedTruck = TruckList.jsonToTruck(self.app.truck_data[self.truck_dropdown.current()])
         print( self.truck_dropdown.current())
-        print(f"Selected Truck: {self.truck_variable.get()}")
 
     def on_driver_selected(self, event):
         self.app.selectedDriver = DriversList.jsonToDriver(self.app.driver_data[self.driver_dropdown.current()])
-        print(f"Selected Driver: {self.driver_variable.get()}")
 
     def on_payload_selected(self, event):
         self.app.selectedPayload = PayloadList.jsonToPayload(self.app.payload_data[self.payload_dropdown.current()])
-        print(f"Selected Driver: {self.payload_variable.get()}")

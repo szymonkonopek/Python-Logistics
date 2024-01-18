@@ -52,14 +52,5 @@ class Transit:
     
 # Function to calculate Drivers' salary
     def calculateDriverSalary(self):
-        print(self.totalTime)
-        print(self.destA)
-        print(self.destB)
-        print(self.distance)
-        print("Driver" + self.driver.getNameSurname())
-        print(self.payload.getName())
-        print(self.truck.getBrandModel())
-        
-        
         total = (self.totalTime * getattr(self.driver, 'hourlyBaseRate') * (1 + ((self.driver.getYearsOfExperience())/5))) * self.getPayloadMultiplier() + self.additionalCost()
         return round(total,2)

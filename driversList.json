@@ -33,5 +33,12 @@
         "surname": "pp",
         "hireDate": "01/15/2024",
         "hourlyBaseRate": 33
+    },
+    {
+        "id": "6fac0234-b63e-11ee-8686-217724fe9272",
+        "name": "Ma\u0142gosia",
+        "surname": "Lis",
+        "hireDate": "01/09/2024",
+        "hourlyBaseRate": 20
     }
 ]

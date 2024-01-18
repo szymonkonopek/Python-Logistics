@@ -136,8 +136,8 @@ class AddPayloadWindow:
             # Attempt to convert the input to an integer
             if new_value:
                 int(new_value)
-                if int(new_value) > 150:
-                    messagebox.showerror("Error", "Max weight cannot exceed 22000 kilograms.")
+                if int(new_value) > 100000:
+                    messagebox.showerror("Error", "Max weight cannot exceed 100 000 kilograms.")
                     return False
             return True
         except ValueError:

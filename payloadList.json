@@ -33,5 +33,12 @@
         "type": "PayloadAnimal",
         "maxAllowedSpeed": 80,
         "specialNeeds": true
+    },
+    {
+        "id": "dbbe4348-5283-465f-bb9a-d783af8b3108",
+        "name": "Sugar",
+        "type": "PayloadRegular",
+        "maxAllowedSpeed": 150,
+        "weight": 55000
     }
 ]
