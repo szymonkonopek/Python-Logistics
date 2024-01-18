@@ -69,4 +69,4 @@ class CalculationPage:
             label_driver_salary.grid(row=11, column=1, pady=10, sticky="w")
 
             calculate_button = ttk.Button(self.app.root, text="Restart calculator")
-        calculate_button.grid(row=6, column=1, pady=10, sticky="w")
+            calculate_button.grid(row=12, column=1, pady=10, sticky="w")
