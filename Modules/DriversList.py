@@ -54,5 +54,6 @@ class DriversList():
                 return True
         return False
     
-    def jsonToDriver(self, driverJson):
+    @staticmethod
+    def jsonToDriver(driverJson):
         return Driver(driverJson['name'], driverJson['surname'], driverJson['hireDate'], int(driverJson['hourlyBaseRate']))

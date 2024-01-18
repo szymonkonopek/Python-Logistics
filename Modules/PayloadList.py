@@ -44,13 +44,14 @@ class PayloadList:
             }
     
 # Transforms json dictionary object to Payload class object
-    def jsonToPayload(self, json_data):
+    @staticmethod
+    def jsonToPayload(json_data):
         payload_type = json_data.get("type", None)
         if payload_type == "PayloadRegular":
             return PayloadRegular(
                 #json_data["id"],
                 json_data["name"],
-                #json_data["type"],
+                # json_data["type"],
                 json_data["maxAllowedSpeed"],
                 json_data["weight"]
             )
@@ -58,7 +59,7 @@ class PayloadList:
             return PayloadAnimal(
                 #json_data["id"],
                 json_data["name"],
-                #json_data["type"],
+                # json_data["type"],
                 json_data["maxAllowedSpeed"],
                 json_data["specialNeeds"]
             )
@@ -66,7 +67,7 @@ class PayloadList:
             return PayloadDangerous(
                 #json_data["id"],
                 json_data["name"],
-                #json_data["type"],
+                # json_data["type"],
                 json_data["maxAllowedSpeed"],
                 json_data["levelOfDanger"]
             )

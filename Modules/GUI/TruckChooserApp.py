@@ -28,21 +28,19 @@ class TruckChooserApp:
         self.root.title("Truck Chooser App")
 
         # Getting recently added drivers, trucks and payloads 
-        lastDriver = GetLastDriver()
-        lastTruck = GetLastTruck()
-        lastPayload = GetLastPayload()
+        # lastDriver = GetLastDriver()
+        # lastTruck = GetLastTruck()
+        # lastPayload = GetLastPayload()
         
         
         # Dynamic variables while choosing a driver, truck or payload
-        self.selectedDriver = lastDriver.getNameSurname()
-        self.selectedPayload = lastPayload.getName()
-        self.selectedTruck = lastTruck.getBrandModel()
+        self.selectedDriver = Driver("","","",0)
+        self.selectedPayload = PayloadDangerous("","",0)
+        self.selectedTruck = Truck("","",0,0,0)
 
         # this still does not work. it can't fetch chosen driver, truck, payload.
         # instead it fetches the lastly added object, which is not okay. 
-        self.selectedDriverObj = lastDriver
-        self.selectedPayloadObj = lastPayload
-        self.selectedTruckObj = lastTruck
+       
         # First select
         self.fromDestination = Destination()
         self.toDestination = Destination()
@@ -70,24 +68,29 @@ class TruckChooserApp:
 
 
     def calculate(self):
-        transit = Transit(
-            self.selectedDriverObj,
-            self.selectedTruckObj, 
-            self.selectedPayloadObj, 
-            self.fromDestination.getName(), 
-            self.toDestination.getName(), 
-            PriceList())
+        try: 
+            transit = Transit(
+                self.selectedDriver,
+                self.selectedTruck, 
+                self.selectedPayload, 
+                self.fromDestination.getName(), 
+                self.toDestination.getName(), 
+                PriceList())
+            
+            transit.getDistance()
+
+            self.distance = getattr(transit, 'distance')
+            self.fuelPrice = transit.calculateFuelPrice()
+            self.driverTime = transit.calculateDriverTime()
+            self.driverSalary = transit.calculateDriverSalary()
+
+            self.calculationPage.show()
+            self.calculationPage.showCalculations()
         
-        transit.getDistance()
+        except Exception as e:
+            print(e, "Error: Calculation failed.")
 
-        self.distance = getattr(transit, 'distance')
-        self.fuelPrice = transit.calculateFuelPrice()
-        self.driverTime = transit.calculateDriverTime()
-        self.driverSalary = transit.calculateDriverSalary()
-
-        self.calculationPage.show()
-        self.calculationPage.showCalculations()
-
+        
 
     def load_truck_data(self):
         with open(r'truckList.json', 'r') as file:

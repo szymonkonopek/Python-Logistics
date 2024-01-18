@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import ttk, StringVar, END
 from tkinter import ttk
 import json
+from Modules.DriversList import DriversList
+from Modules.TruckList import TruckList
+from Modules.PayloadList import PayloadList
 
 # GUI select Base information page, to select Driver, Truck and Payload
 class SelectBaseInfo():
@@ -16,11 +19,12 @@ class SelectBaseInfo():
         label_truck = ttk.Label(self.app.root, text="Select a Truck:")
         label_truck.pack(pady=10)
 
-        self.truck_variable = StringVar(value = self.app.selectedTruck)
+        self.truck_variable = StringVar(value = self.app.selectedTruck.getBrandModel())
         truck_models = [f"{truck['brand']} {truck['model']}" for truck in self.app.truck_data]
         self.truck_dropdown = ttk.Combobox(self.app.root, values=truck_models, textvariable=self.truck_variable)
         self.truck_dropdown.pack(pady=10)
-        self.truck_dropdown.current()
+
+        # self.truck_dropdown.current()
 
         self.truck_dropdown.bind("<<ComboboxSelected>>", self.on_truck_selected)
 
@@ -28,7 +32,7 @@ class SelectBaseInfo():
         label_driver = ttk.Label(self.app.root, text="Select a Driver:")
         label_driver.pack(pady=10)
 
-        self.driver_variable = StringVar(value = self.app.selectedDriver)
+        self.driver_variable = StringVar(value = self.app.selectedDriver.getNameSurname())
         driver_names = [f"{driver['name']} {driver['surname']}" for driver in self.app.driver_data]
         self.driver_dropdown = ttk.Combobox(self.app.root, values=driver_names, textvariable=self.driver_variable)
         self.driver_dropdown.pack(pady=10)
@@ -39,7 +43,7 @@ class SelectBaseInfo():
         label_payload = ttk.Label(self.app.root, text="Select a Payload:")
         label_payload.pack(pady=10)
 
-        self.payload_variable = StringVar(value = self.app.selectedPayload)
+        self.payload_variable = StringVar(value = self.app.selectedPayload.getName())
         payload_names = [f"{payload['name']}" for payload in self.app.payload_data]
         self.payload_dropdown = ttk.Combobox(self.app.root, values=payload_names, textvariable=self.payload_variable)
         self.payload_dropdown.pack(pady=10)
@@ -64,13 +68,14 @@ class SelectBaseInfo():
         
         
     def on_truck_selected(self, event):
-        self.app.selectedTruck = self.truck_variable.get()
+        self.app.selectedTruck = TruckList.jsonToTruck(self.app.truck_data[self.truck_dropdown.current()])
+        print( self.truck_dropdown.current())
         print(f"Selected Truck: {self.truck_variable.get()}")
 
     def on_driver_selected(self, event):
-        self.app.selectedDriver = self.driver_variable.get()
+        self.app.selectedDriver = DriversList.jsonToDriver(self.app.driver_data[self.driver_dropdown.current()])
         print(f"Selected Driver: {self.driver_variable.get()}")
 
     def on_payload_selected(self, event):
-        self.app.selectedPayload = self.payload_variable.get()
+        self.app.selectedPayload = PayloadList.jsonToPayload(self.app.payload_data[self.payload_dropdown.current()])
         print(f"Selected Driver: {self.payload_variable.get()}")

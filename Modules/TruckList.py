@@ -27,7 +27,8 @@ class TruckList:
         }
     
 # Transforms json dictionary object to Truck class object
-    def jsonToTruck(self, truckJson):
+    @staticmethod
+    def jsonToTruck(truckJson):
         return Truck(truckJson['brand'], truckJson['model'], int(truckJson['capacity']), int(truckJson['fuelEconomy']), int(truckJson['maxAllowedSpeed']))
 
 # Deletes Truck with given id from truckList.json
