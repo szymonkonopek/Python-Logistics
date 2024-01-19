@@ -93,6 +93,4 @@ class PayloadList:
     
 # Function which retrun whole list of payload
     def getPayloadList(self):
-        for i in range(len(self.payloadList)):
-            self.payloadList[i] = self.jsonToPayload(self.payloadList[i])
         return self.payloadList

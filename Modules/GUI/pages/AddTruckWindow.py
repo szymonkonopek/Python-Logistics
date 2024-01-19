@@ -103,8 +103,8 @@ class AddTruckWindow:
             # Attempt to convert the input to an integer
             if new_value:
                 int(new_value)
-                if int(new_value) > 3000 or int(new_value) < 50000:
-                    messagebox.showerror("Error", "Please enter a capacity value between 3000 kilograms and 50000 kilograms")
+                if int(new_value) > 50000:
+                    messagebox.showerror("Error", "Please enter capacity value less than 50000 kilograms")
                     return False
             return True
         except ValueError:

@@ -15,7 +15,7 @@ def getLastTruck():
     truck_data = TruckList()
 
     if truck_data:
-        return TruckList.jsonToTruck(truck_data.getTruckList()[-1])
+        return truck_data.getTruckList()[-1]
     
 def getLastPayload():
     payload_data = PayloadList()

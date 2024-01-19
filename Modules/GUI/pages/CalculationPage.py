@@ -76,6 +76,7 @@ class CalculationPage:
     def showCalculations(self):
         if self.app.selectedPayload.type == "PayloadRegular" and self.app.selectedPayload.weight > self.app.selectedTruck.capacity:
             messagebox.showerror("Error", "Payload weighs more than the available capacity of a selected truck.\nPlease choose proper truck.")
+
         else:
             label_distance = ttk.Label(self.app.root, text=f"Distance: {self.app.distance} km")
             label_distance.grid(row=7, column=1, pady=10, padx=10)
@@ -89,5 +90,11 @@ class CalculationPage:
             label_driver_salary = ttk.Label(self.app.root, text=f"Total salary: {self.app.driverSalary} $")
             label_driver_salary.grid(row=7, column=4, pady=10, padx=10)
 
-            calculate_button = ttk.Button(self.app.root, text="Restart calculator", command=self.app.selectDriver.show)
-            calculate_button.grid(row=8, column=2,columnspan=2,padx=10, pady=10)
+            total = self.app.driverSalary + self.app.fuelPrice
+            label_total_summary = ttk.Label(self.app.root, text=f"Total cost: {total}$")
+            label_total_summary.grid(row=8, column=2,columnspan=2,padx=10, pady=10)
+        
+        calculate_button = ttk.Button(self.app.root, text="Restart calculator", command=self.app.selectDriver.show)
+        calculate_button.grid(row=9, column=2,columnspan=2,padx=10, pady=10)
+
+            
