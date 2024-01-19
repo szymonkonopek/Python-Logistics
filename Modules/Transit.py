@@ -1,4 +1,3 @@
-# from Modules.Gpt import Gpt
 from Modules.GoogleMaps import GoogleMaps
 from Modules.PriceList import PriceList
 
@@ -22,11 +21,14 @@ class Transit:
         fuelEconomy = getattr(self.truck, 'fuelEconomy')
         return (int) ((self.distance / 100.0) * fuelEconomy * self.priceList.getFuelPriceEuro())
     
-# Drivers' total driving time is based on the covered distance, max allowed speed (based on payload) and driver's rest time for every 8 hours of driving.
+# Drivers' total driving time is based on the covered distance, max allowed speed (based on payload or truck) and driver's rest time for every 8 hours of driving.
 # Time after work is not counted (eg. for sleep, meals).
-# Also, if the payload type is Animal and the special needs are required, then the breaks are done every 4 hours, for the Animal safety.
+# Also, if the payloads' type is Animal and the special needs are required, then the breaks are done every 4 hours, for the Animal safety.
     def calculateDriverTime(self):
-        drivingTime = self.distance / getattr(self.payload, 'maxAllowedSpeed')
+        if (self.payload.maxAllowedSpeed > self.truck.maxAllowedSpeed):
+            drivingTime = self.distance / getattr(self.truck, 'maxAllowedSpeed')
+        else:
+            drivingTime = self.distance / getattr(self.payload, 'maxAllowedSpeed')
         if (self.payload.type == "PayloadAnimal" and self.payload.specialNeeds == True):
             restTime = (int) (drivingTime / 4)
         else: 
@@ -50,7 +52,7 @@ class Transit:
         return 0
         
     
-# Function to calculate Drivers' salary
+# Function to calculate Drivers' salary. Salary depends on their base rate, experience, kind of payload and additional cost regarding class of dangerous payload (if applicable)
     def calculateDriverSalary(self):
         total = (self.totalTime * getattr(self.driver, 'hourlyBaseRate') * (1 + ((self.driver.getYearsOfExperience())/5))) * self.getPayloadMultiplier() + self.additionalCost()
         return round(total,2)

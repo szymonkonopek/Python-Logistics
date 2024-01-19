@@ -1,6 +1,7 @@
 import json
 from datetime import date
 from tkinter import Button
+from Modules.GUI.GetLastElements import getLastDriver, getLastPayload, getLastTruck
 
 from Modules.GUI.pages.SelectBaseInfo import SelectBaseInfo
 from Modules.GUI.pages.SelectDestination import SelectDestination
@@ -10,10 +11,6 @@ from Modules.Transit import Transit
 from Modules.GUI.pages.AddDriverWindow import AddDriverWindow
 from Modules.GUI.pages.AddPayloadWindow import AddPayloadWindow
 from Modules.GUI.pages.AddTruckWindow import AddTruckWindow
-from Modules.GUI.GetLastElements import GetLastDriver
-from Modules.GUI.GetLastElements import GetLastTruck
-from Modules.GUI.GetLastElements import GetLastPayload
-
 
 from Modules.Truck import Truck
 from Modules.Driver import Driver
@@ -25,12 +22,12 @@ from Modules.Destination import Destination
 class TruckChooserApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Truck Chooser App")
+        self.root.title("Logistics calculator")
         
         # Dynamic variables while choosing a driver, truck or payload
-        self.selectedDriver = Driver("","","",0)
-        self.selectedPayload = PayloadDangerous("","",0)
-        self.selectedTruck = Truck("","",0,0,0)
+        self.selectedDriver = getLastDriver()
+        self.selectedPayload = getLastPayload()
+        self.selectedTruck = getLastTruck()
 
         # Select Destination
         self.fromDestination = Destination()
@@ -48,7 +45,7 @@ class TruckChooserApp:
 
 
 
-        self.root.geometry("600x600")
+        self.root.geometry("750x500")
 
         self.load_truck_data()
         self.load_driver_data()

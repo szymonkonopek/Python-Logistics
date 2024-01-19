@@ -6,7 +6,7 @@ class PriceList:
     def getFuelPriceEuro(self):
         return self.fuelPriceEuro
     
-    # additional cost for every 100km in dollars, depending on a type of a payload
+    # Additional cost for every 100km in dollars, depending on a type of a payload
     @staticmethod
     def getPayloadDangerousPrice(levelOfDanger):
     # 1 - type explosive

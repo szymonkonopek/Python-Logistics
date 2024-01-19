@@ -21,23 +21,25 @@ class Info():
                 info_window.title("Information")
 
                 if isinstance(selected_payload, PayloadRegular):
-                    payload_info = f"\nPayload Information:\nName: {selected_payload.name}\nType: {selected_payload.type}\nMax allowed speed: {selected_payload.maxAllowedSpeed}\nWeight: {selected_payload.weight}\n"
+                    payload_info = f"\nPayload Information:\nName: {selected_payload.name}\nType: {selected_payload.type}\nMax allowed speed: {selected_payload.maxAllowedSpeed} km/h\nWeight: {selected_payload.weight} kg\n"
                 elif isinstance(selected_payload, PayloadAnimal):
-                    payload_info = f"\nPayload Information:\nName: {selected_payload.name}\nType: {selected_payload.type}\nMax allowed speed: {selected_payload.maxAllowedSpeed}\nSpecial needs: {selected_payload.specialNeeds}\n"
+                    payload_info = f"\nPayload Information:\nName: {selected_payload.name}\nType: {selected_payload.type}\nMax allowed speed: {selected_payload.maxAllowedSpeed} km/h\nSpecial needs: {selected_payload.specialNeeds}\n"
                 elif isinstance(selected_payload, PayloadDangerous):
-                    payload_info = f"\nPayload Information:\nName: {selected_payload.name}\nType: {selected_payload.type}\nMax allowed speed: {selected_payload.maxAllowedSpeed}\nLevel of danger: {selected_payload.levelOfDanger}\n"
+                    payload_info = f"\nPayload Information:\nName: {selected_payload.name}\nType: {selected_payload.type}\nMax allowed speed: {selected_payload.maxAllowedSpeed} km/h\nClass of danger: {selected_payload.levelOfDanger}\n"
 
                 info_label = ttk.Label(info_window, text=f"Truck Information:\n"
                                                         f"Brand: {selected_truck.brand}\n"
                                                         f"Model: {selected_truck.model}\n"
-                                                        f"Capacity: {selected_truck.capacity}\n"
-                                                        f"Fuel Economy: {selected_truck.fuelEconomy}\n"
+                                                        f"Capacity: {selected_truck.capacity} kg\n"
+                                                        f"Fuel Economy: {selected_truck.fuelEconomy} l/100km \n"
+                                                        f"Max speed: {selected_truck.maxAllowedSpeed} km/h \n"
                                                         "\n"
                                                         f"Driver Information:\n"
                                                         f"Name: {selected_driver.name}\n"
                                                         f"Surname: {selected_driver.surname}\n"
                                                         f"Hire Date: {selected_driver.hireDate}\n"
-                                                        f"Hourly Base Rate: {selected_driver.hourlyBaseRate}"
+                                                        f"Hourly Base Rate: {selected_driver.hourlyBaseRate}$"
+                                                        "\n"
                                                         f"{payload_info}"
                                                         )
                 info_label.pack(padx=20, pady=20)

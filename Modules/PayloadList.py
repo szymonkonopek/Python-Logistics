@@ -46,7 +46,9 @@ class PayloadList:
 # Transforms json dictionary object to Payload class object
     @staticmethod
     def jsonToPayload(json_data):
-        payload_type = json_data.get("type", None)
+        print(json_data)
+        print("s")
+        payload_type = json_data["type"]
         if payload_type == "PayloadRegular":
             return PayloadRegular(
                 #json_data["id"],
